@@ -30,7 +30,7 @@ RUN ls -l /app/dist
 FROM nginx:alpine
 
 # Copy built frontend app to Nginx folder
-COPY --from=build /app/dist/frontend /usr/share/nginx/html
+COPY --from=build /app/dist/client /usr/share/nginx/html
 
 # Expose port 80 for serving frontend
 EXPOSE 80
