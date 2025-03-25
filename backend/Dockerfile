@@ -1,10 +1,25 @@
-FROM openjdk:21-jdk-slim
+# Use an official Java image as a build stage
+FROM maven:3.8.6-openjdk-17 AS build
+
 WORKDIR /app
 
-# Copy the jar file into the container
-COPY target/*.jar app.jar
+# Copy project files
+COPY . .
 
+# Build the application
+RUN mvn clean package -DskipTests
+
+# Use a lightweight JDK image for the final container
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+# Copy the built JAR from the previous stage
+COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port
 EXPOSE 8080
 
-# Specify the command to run on container start
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the application
+CMD ["java", "-jar", "app.jar"]
+
