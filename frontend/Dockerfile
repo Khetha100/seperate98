@@ -23,6 +23,9 @@ RUN sed -i "s|http://localhost:8080|${BACKEND_URL}|g" src/environments/environme
 # Build Angular app
 RUN npm run build -- --configuration=production
 
+# Debug: Check if the build output exists
+RUN ls -l /app/dist
+
 # Use Nginx to serve Angular app
 FROM nginx:alpine
 
