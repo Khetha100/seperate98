@@ -29,8 +29,9 @@ RUN ls -l /app/dist
 # Use Nginx to serve Angular app
 FROM nginx:alpine
 
-# Copy built frontend app to Nginx folder
-COPY --from=build /app/dist/client /usr/share/nginx/html
+# Copy the Angular build output from the build stage to the Nginx folder
+COPY --from=build /app/dist/client/browser /usr/share/nginx/html
+
 
 # Expose port 80 for serving frontend
 EXPOSE 80
