@@ -2,10 +2,10 @@
 FROM node:20.11.0-alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app/frontend
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY package*.json /app/frontend/
 
 # Clean cache and install dependencies
 RUN npm cache clean --force
