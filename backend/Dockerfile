@@ -1,5 +1,5 @@
-# Use an official Maven image for building the app
-FROM maven:3-eclipse-temurin-17 AS build
+# Use a Maven image with JDK 21
+FROM maven:3-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
@@ -12,8 +12,8 @@ WORKDIR /app/backend
 # Build the application
 RUN mvn clean package -DskipTests
 
-# Use a lightweight JDK image for running the final container
-FROM openjdk:17-jdk-slim
+# Use a lightweight JDK 21 image for the final container
+FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
@@ -25,5 +25,6 @@ EXPOSE 8080
 
 # Run the application
 CMD ["java", "-jar", "app.jar"]
+
 
 
