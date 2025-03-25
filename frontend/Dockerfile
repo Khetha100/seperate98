@@ -27,7 +27,7 @@ RUN npm run build -- --configuration=production
 FROM nginx:alpine
 
 # Copy built frontend app to Nginx folder
-COPY --from=build /app/frontend/dist /usr/share/nginx/html
+COPY --from=build /app/dist/* /usr/share/nginx/html
 
 # Expose port 80 for serving frontend
 EXPOSE 80
