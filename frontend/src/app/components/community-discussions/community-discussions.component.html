@@ -1,0 +1,133 @@
+<app-inside-nav></app-inside-nav>
+<div class="flex mt-[100px]">
+  <div class="frame-39402">
+    <div class="rectangle-18006"></div>
+    <!-- <div class="rectangle-18007"></div> -->
+    <button class="discussions">Discussions</button>
+    <button class="students" routerLink="/insideCommunities">Students</button>
+  </div>
+
+  <!--
+<div class="frame-39406">
+  <div class="nelson-mandela-s-inauguration">
+    Nelson Mandela’s inauguration.
+  </div>
+  <div class="initiatedDiscussion">
+    This discussion was initiated by Wade Daniels in order to discuss Nelson
+    Mandela’s popular speech.
+  </div>
+  <div class="join-discussion" routerLink="/communityDiscussion">
+    Join Discussion
+  </div>
+  <div class="line-14"></div>
+</div> -->
+
+  <!-- Search -->
+  <div>
+    <input class="frame-394062 outline-[#00967d]" placeholder="Search" />
+    <img class="search" src="search0.svg" />
+  </div>
+
+  <!-- Discussion Form -->
+  <div
+    class="discussion-form bg-[#f1f1f1] rounded-xl w-[95%] p-4 absolute left-[10px] top-[200px]"
+  >
+    <!-- <form [formGroup]="discussionForm" (ngSubmit)="onSubmitDiscussionForm()"> -->
+    <form [formGroup]="discussionForm">
+      <input
+        class="w-full px-2 py-1 outline-none border rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-[#00967d]"
+        formControlName="title"
+        placeholder="Discussion title"
+        type="text"
+      />
+      <input
+        class="w-full px-2 py-1 outline-none border rounded-md mb-2 focus:outline-none focus:ring-2 focus:ring-[#00967d]"
+        formControlName="description"
+        placeholder="Discussion description..."
+        type="text"
+      />
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-2 ml-[220px]">
+          <button type="button">
+            <!-- <input hidden class="imageInput" (change)="onFileChange($event)" #fileInput accept="image/*" type="file" id="file">
+            <label class="imageInput" for="file"><img class="w-5 h-5" src="icons/image-add1.svg" /></label> -->
+          </button>
+
+          <!-- <button type="button">
+            <img class="w-5 h-5" src="icons/file-add1.svg" />
+          </button> -->
+        </div>
+        <button
+          (click)="onSubmitDiscussionForm()"
+          class="bg-[#00967d] text-white px-4 py-1 rounded-md"
+          type="submit"
+        >
+          Discuss
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Discussions List -->
+  <div class="absolute left-[0px] top-[350px] w-[95%] mt-2 ml-2">
+    <div class="text-xl font-medium mb-2">Discussions</div>
+    <div class="space-y-4">
+      @for(item of discussions; track $index) {
+      <div class="bg-gray- bold rounded-md border shadow-xl p-4">
+        <h3 class="text-black text-lg font-light flex">
+          <span class="text-bold-800 w-[300px]"> {{ item.title }}</span>
+          @if(checkIfDiscussionCreator(item.userInfo?.id)){
+          @if(item.userInfo?.id){ }
+          <i
+            class="fas fa-trash text-red-600 cursor-pointer ml-[280px] absolute left-[55px]"
+            (click)="onDeleteDiscussion(item.id)"
+            title="Delete Discussion "
+          ></i>
+          } @else{
+          <app-report-modal class="ml-[280px]"></app-report-modal>
+          }
+        </h3>
+        <div class="border-t border-black my-2"></div>
+
+        <div class="flex">
+          <!-- @if(this.addContentService.communityPicture == "people-skin-type-7.png"){ -->
+          <!-- <img src="this.addContentService.communityPicture"> -->
+          <p class="text-black text-sm font-light">{{ item.description }}</p>
+
+          <!-- } -->
+          <!-- @else { -->
+
+          <!-- } -->
+        </div>
+        <div class="mt-2">
+          @if(item.id && item.subscriptionChannel){
+
+          <div class="inline-flex w-full gap-x-2">
+            <div class="flex">
+              <!-- <img
+                class="image h-5"
+                routerLink="/user-profile"
+                src="icons/image0.svg"
+              /> -->
+
+              <div class="text-gray-400 flex text-xs">
+                {{ item.userInfo?.firstName }} started this discussion
+              </div>
+            </div>
+            <button
+              class="text-[#146356] text-[12px] underline relative left-[118px]"
+              (click)="clickedDiscussion(item, item.subscriptionChannel)"
+              routerLink="/communityDiscussion"
+            >
+              JUMP IN!
+            </button>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+<app-navbar></app-navbar>

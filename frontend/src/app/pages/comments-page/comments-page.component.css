@@ -1,0 +1,81 @@
+* {
+  font-family: "Poppins-SemiBold", sans-serif;
+}  
+  .commentInput {
+    position: relative;
+    top: 295px;
+    left: 25px;
+  }
+  input {
+    outline: none;
+  }
+  .eduMingle {
+    position: relative;
+    top: 75px;
+    height: 155px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  } 
+  .heading {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+.icons {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  margin: 6px;
+  position: relative;
+  top: 2px;
+}
+.name {
+  margin-top: 15px;
+  font-size: 13px;
+}
+.commentbox {
+  /* margin-top: 15px; */
+  position: relative;
+  top: 215px;
+  left: 48px;
+  border: #cecece solid transparent;
+}
+.commentIcon {
+  position: relative;
+  top: 2px;
+  width: 17.5px;
+  height: 17.5px;
+}
+.commentBtn {
+  color: white;
+  background-color: #00967d ;
+  width: 75px;
+  height: 30px;
+  border-radius: 10px;
+  position: relative;
+  left: 270px;
+  top: 17px;
+  text-align: center;
+}
+.commentsNum {
+  position: relative;
+  top: 225px;
+  left: 35px;
+}
+.comment {
+  font-size: 14px;
+}
+.likeCount {
+  padding-left: 3px;
+  position: relative;
+  top: -1px;
+  font-size: 12px !important;
+  
+}
+.more {
+  position: relative;
+  left: 210px;
+}
+.time {
+  color: #cecece;
+  position: relative;
+}

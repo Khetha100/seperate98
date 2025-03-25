@@ -1,0 +1,23 @@
+<app-inside-nav></app-inside-nav>
+<div class="mt-[50px] bg-[#f1f3f9] container mx-auto px-4 py-8 pb-[80px]">
+  <div class="grid grid-cols-2 gap-4 place-items-center">
+    <div *ngFor="let badge of badges" class="w-full max-w-[180px] h-[200px]">
+      <div
+        class="bg-white rounded-lg shadow-md p-4 flex flex-col items-center text-center h-full"
+      >
+        <div class="mb-2">
+          <img
+            [src]="badge.imageUrl"
+            [alt]="badge.name + ' badge'"
+            class="rounded-full w-16 h-16"
+          />
+        </div>
+        <div class="flex-grow">
+          <h2 class="text-sm font-semibold mb-1">{{ badge.name }}</h2>
+          <p class="text-gray-600 text-xs">{{ badge.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-navbar></app-navbar>

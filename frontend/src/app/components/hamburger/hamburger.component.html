@@ -1,0 +1,56 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <nav>
+    <ul class="nav-bar">
+      <input type="checkbox" id="check" />
+      <span class="menu">
+        <br />
+        <br />
+        <br />
+        <li>
+          <a routerLink="/aboutUs">
+            <img src="icons/aboutUsIcon.png" alt="About Us Icon" />About Us
+          </a>
+        </li>
+        <li>
+          <a routerLink="/policy">
+            <img src="icons/policyIcon.png" alt="Policy Icon" />Policy
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contactUs">
+            <img src="icons/contactUs.png" alt="Contact Us Icon" />Contact Us
+          </a>
+        </li>
+        <li class="donate">
+          <a routerLink="/donationPage">
+            <img src="hand-holding-heart0.png" alt="Donation Icon" />Donate
+          </a>
+        </li>
+        <!-- need to add the sign in and sign out icons here -->
+        <label for="check" class="close-menu">
+          <img src="icons/closeIcon.svg" alt="Close Menu" />
+        </label>
+        <li class="signOut">
+          <a (click)="signInOrOut()">
+            <img
+              [src]="
+                isLoggedIn ? 'icons/signOutIcon.svg' : 'icons/signInIcon.svg'
+              "
+              [alt]="isLoggedIn ? 'Sign Out' : 'Sign In'"
+            />
+            {{ isLoggedIn ? "Sign Out" : "Sign In" }}
+          </a>
+        </li>
+      </span>
+      <label for="check" class="hamburger"><i class="fas fa-bars"></i></label>
+    </ul>
+  </nav>
+</body>

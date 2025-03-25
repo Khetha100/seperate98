@@ -1,0 +1,155 @@
+<app-inside-nav></app-inside-nav>
+
+<div class="max-w-2xl mx-auto mt-3 bg-white shadow-xl rounded-lg text-gray-900">
+  <div class="rounded-t-lg h-32 overflow-hidden">
+    <img
+      class="header-img rounded-full object-cover object-top w-full"
+      src="https://unsplash.com/photos/white-textile-with-black-shadow-MS9Tnh3if1o"
+      alt="Books and a calculator"
+    />
+  </div>
+
+  <!-- Profile Picture -->
+  <div
+    class="mx-auto w-32 h-32 relative -mt-16 border-2 border-gray-300 rounded-full overflow-hidden"
+  >
+    <img
+      class="profile-picture rounded-full w-32 h-32 object-cover object-center"
+      [src]="loggedInUserInfo.imageUrl || 'default-img-2.png'"
+      alt="Profile Image"
+    />
+  </div>
+
+  <!-- Name and Actions -->
+  <div class="text-center flex justify-center gap-2 mt-2">
+    <h2 class="font-semibold">
+      {{ loggedInUserInfo.firstName }} {{ loggedInUserInfo.lastName }}
+    </h2>
+    <a routerLink="/profile/edit" class="edit-profile-link">
+      <img class="edit-profile" width="16" height="16" src="edit-profile.svg" />
+    </a>
+    <img
+      class="share-profile cursor-pointer"
+      width="14"
+      height="14"
+      src="share1.svg"
+      (click)="copyLinkToProfile()"
+    />
+  </div>
+
+  <!-- Badges Section -->
+  <div
+    class="text-center flex justify-center gap-2 mt-2 cursor-pointer hover:opacity-75 transition-opacity duration-200"
+    (click)="openBadgesDialog()"
+  >
+    <img class="badges" width="20" height="20" src="badge.png" />
+    <h1 class="text-gray-300 text-xs">
+      {{ earnedBadges?.length || 0 }} badges
+    </h1>
+  </div>
+
+  <!-- Bio Section -->
+  <p class="text-gray-500 text-center text-xs mt-5">
+    {{ loggedInUserInfo.bio || "No bio available." }}
+  </p>
+
+  <hr class="border-gray-100 my-4" />
+
+  <!-- Stats -->
+  <div class="m-3">
+    <ul class=" text-xs text-gray-700 flex items-center justify-around">
+      <!-- <li class="flex flex-col items-center">
+        <h2>{{ loggedInUserInfo.firstName?.connections?.length || 0 }}</h2>
+        <div>Connections</div>
+      </li> -->
+      <li
+        class="flex flex-col text-xs items-center cursor-pointer"
+        (click)="goToCommunities()"
+      >
+        <h2>{{ loggedInUserInfo.firstName?.communities?.length || 0 }}</h2>
+        <div>Communities</div>
+      </li>
+      <!-- <li class="flex flex-col items-center">
+        <h2>{{ loggedInUserInfo.firstName?.posts?.length || 0 }}</h2>
+        <div>Posts</div>
+      </li> -->
+    </ul>
+  </div>
+
+  <hr class="border-gray-100 " />
+
+  <!-- User Posts Section -->
+  <div class="mt-6">
+    <h2 class="text-sm font-semibold text-gray-700 text-center">Posts</h2>
+
+    <div
+      *ngIf="loggedInUserInfo?.posts?.length === 0"
+      class="text-center text-gray-500"
+    >
+      No posts available.
+    </div>
+
+    <div
+      *ngFor="let post of loggedInUserInfo?.posts"
+      class="frame-39389 bg-white shadow-md rounded-lg p-6 m-2"
+    >
+      <div class="flex items-center space-x-3">
+        <img
+          class="w-10 h-10 rounded-full"
+          [src]="loggedInUserInfo.imageUrl || 'default-img-2.png'"
+        />
+        <div>
+          <div class="font-bold">
+            {{ loggedInUserInfo.firstName }} {{ loggedInUserInfo.lastName }}
+          </div>
+          <!-- <div class="text-sm text-gray-500">{{ loggedInUserInfo.username }}</div> -->
+        </div>
+      </div>
+
+      <p class="mt-2 text-gray-700">{{ post.description }}</p>
+
+      <div *ngIf="post.imageUrl" class="mt-3">
+        <img class="w-full rounded-lg" [src]="post.imageUrl" alt="Post Image" />
+      </div>
+
+      <div class="flex items-center mt-3 text-gray-500 text-sm">
+        <div class="flex items-center space-x-2">
+          <img src="icons/love0.svg" class="w-4 h-4" />
+          <span>{{ post.likes || 0 }}</span>
+        </div>
+
+        <div class="flex items-center p-4 space-x-2">
+          <img src="icons/chat1.svg" class="w-4 h-4" />
+          <span>{{ post.comments?.length || 0 }}</span>
+        </div>
+
+        <div>{{ post.timeAgo }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Message -->
+  <div
+    *ngIf="isToastMessageVisible"
+    class="fixed inset-0 flex items-center justify-center z-50"
+  >
+    <div class="bg-[#00967D] text-white px-6 py-3 rounded-lg shadow-lg">
+      {{ toastMessage }}
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div
+    *ngIf="loading"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+  >
+    <div class="spinner"></div>
+  </div>
+</div>
+
+<app-navbar></app-navbar>
+<app-badges-dialog
+  *ngIf="showBadgesDialog"
+  [badge]="badge"
+  (close)="closeBadgesDialog()"
+></app-badges-dialog>

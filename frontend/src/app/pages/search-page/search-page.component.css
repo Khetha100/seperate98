@@ -1,0 +1,265 @@
+
+.email-and-social-media-marketing-with-hashtag-sign {
+    position: absolute;
+    left: 50px;
+    top: 156px;
+  }
+  .inputbox {
+    background: #f1f1f1;
+    border-radius: 15px;
+    width: 329px;
+    height: 55px;
+    position: absolute;
+    left: 52px;
+    top: 13px;
+  }
+  .frame-39389 {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  /* height: 297px; */
+  height: 92px;
+  position: relative;
+  left: 50px;
+  top: 80px;
+  overflow: hidden;
+  width: 300px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+  .arrow-left {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    top: 25px;
+  }
+  .inputbox::placeholder {
+    font-size: 15px;
+}
+.searchIcon {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 338px;
+    top: 27px; 
+  }
+
+/* .image {
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+  } */
+
+.search {
+    text-align: center;
+    position: relative;
+    width: 300px; 
+
+}
+.searchInput::placeholder {
+    font-size: 15px;
+    padding-left: 15px;
+}
+.postbox {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #656566 opacity transparent;
+    border-width: 1px;
+    width: 330px;
+    height: 112px;
+    position: absolute;
+    left: 29px;
+    top: 125px;
+  }
+.image {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+  }
+
+/* .time {
+  color:#cecece;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 69px;
+  top: 37px;
+  font-weight: 550;
+} */
+.post {
+  color: #000000;
+  font-family: "Poppins-Regular", sans-serif;
+  font-weight: 400;
+  font-family: "-", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  left: 15px;
+  top: 59px;
+  word-wrap: break-word;
+}
+
+.more {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 259px;
+  top: 23px;
+  overflow: visible;
+}
+.image-18 {
+  position: absolute;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  width: 301px;
+  height: 161px;
+  left: 15px;
+  top: 90px;
+  object-fit: cover;
+}
+.image-19 {
+  position: absolute;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  width: 301px;
+  height: 151px;
+  left: 15px;
+  top: 105px;
+  object-fit: cover;
+}
+.chat {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 75px;
+  bottom: 12px;
+}
+.bookmark {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 145px;
+  top: 254px;
+  overflow: visible;
+}
+.love {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  overflow: visible;
+}
+._10 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 43px;
+  bottom: 13px;
+}
+.image-21 {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 18px;
+  top: 13px;
+  object-fit: cover;
+}
+._25-minutes-ago {
+  color: #cecece;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  position: absolute;
+  right: 20px;
+  bottom: 13px;
+}
+._3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 103px;
+  bottom: 13px;
+}
+.image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 22.06px;
+  top: 14px;
+  transform: translate(-0.03px, 0.03px);
+  overflow: visible;
+  object-fit: cover;
+  border-radius: 50px;
+}
+.image {
+  border-radius: 25px;
+}
+.spaceUnder {
+  color:transparent;
+  position: absolute;
+  top: 775px;
+}
+input {
+  outline: none !important;
+}
+.image-21 {
+  position: absolute;
+  left: 18px;
+  top: 130px;
+}
+
+.imageInput{
+  /* background: #00967d; */
+  /* border-radius: 10px; */
+  /* width: 100%; */
+  /* margin-top: 10px; */
+  text-align: center;
+  border-radius: 5px;
+}
+.eduname {
+  margin-left: 10px;
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 65.06px;
+  top: 23px;
+  font-weight: 550;
+}
+.name {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  left: 65.06px;
+  top: 25px;
+  font-weight: 550;
+}
+.errorMessage {
+  position: relative;
+  top: 100px;
+  left: 55px;
+}

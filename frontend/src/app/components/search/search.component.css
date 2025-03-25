@@ -1,0 +1,24 @@
+.input {
+  background: #f1f1f1;
+  border-radius: 15px;
+  width: 329px;
+  height: 55px;  
+}
+input::placeholder { 
+  font-size: 14px;
+  padding: 10px;      
+}
+.search {
+    position: relative;
+}
+.input {
+    padding-left: 30px;
+}
+.searchIcon {
+    position: absolute;    
+    left: 280px;           
+    top: 50%;              
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+}

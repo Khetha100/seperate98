@@ -1,0 +1,107 @@
+.next-btn:hover {
+    color: white;
+
+
+}
+/* .error-message{
+    z-index: 10;
+} */
+
+.grade-btns {
+    background-color: transparent;
+    color: #12594D;
+    border: 1px solid transparent; /* Set transparent border initially */
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* .grade-btns:hover {
+    background-color: #00967D;
+    color: white;
+    border: 1px solid transparent; /* Set transparent border initially */
+    /* padding: 10px 20px; */
+    /* font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; */
+
+
+
+
+/* .submit-report-btn, .cancel-report-btn {
+    background-color: #00967D;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cancel-report-btn {
+    background-color: #12594D;
+    border: 1px solid #12594D;
+}
+
+.cancel-report-btn:hover {
+    background-color: white;
+    color: #12594D;
+    border-color: #12594D;
+    outline: none;
+}
+
+.submit-report-btn:hover {
+    background-color: white;
+    color: #00967D;
+    border-color: #00967D;
+    outline: none;
+
+} */
+ .you-have-selected-text{
+    color: #146356;
+    font-size: 16px;
+    font-weight: bold;
+ }
+
+ .hr-line {
+    width: 100%;
+    border: 0.85px solid #9BCBC3;
+    margin-bottom: 0px;
+ }
+
+.confirm-subject-container {
+    background-color: #E8FAF7;
+    padding: 15px;
+    width: 220px;
+    height: 350px;
+    color: #146356;;
+}
+
+.confirm-subject-btn {
+    background-color: #00967D;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cancel-subject-btn {
+    background-color: #12594D;
+    border: 1px solid #12594D;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+
+}
+

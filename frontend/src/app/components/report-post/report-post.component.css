@@ -1,0 +1,80 @@
+.report-pop-up {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.select-reason:focus {
+  outline: 2px solid #00967d;
+  border-color: #00967d;
+}
+
+.additional-details-textbox:focus {
+  outline: 2px solid #00967d;
+  border-color: #00967d;
+}
+
+.submit-report-btn,
+.cancel-report-btn {
+  background-color: #00967d;
+  color: white;
+  border: 1px solid transparent; /* Set transparent border initially */
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cancel-report-btn {
+  background-color: #12594d;
+  border: 1px solid #12594d; /* Ensure border size stays the same */
+}
+
+.cancel-report-btn:hover {
+  background-color: white;
+  color: #12594d;
+  border-color: #12594d;
+  outline: none;
+}
+
+.submit-report-btn:hover {
+  background-color: white;
+  color: #00967d;
+  border-color: #00967d;
+  outline: none;
+}
+
+.toast-message {
+  position: fixed;
+
+  top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  background-color: #00967D;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+
+/* .close-toast-message-btn {
+  position: absolute;
+  cursor: pointer;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+} */
+
+.close-toast-message-btn:hover {
+  position: absolute;
+  cursor: pointer;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #00967d;
+  background-color: white;
+  border: 1px solid #00967d;
+}

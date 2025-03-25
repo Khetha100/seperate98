@@ -1,0 +1,413 @@
+[debug] [2025-03-01T07:34:01.729Z] ----------------------------------------------------------------------
+[debug] [2025-03-01T07:34:01.731Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2025-03-01T07:34:01.731Z] CLI Version:   13.32.0
+[debug] [2025-03-01T07:34:01.731Z] Platform:      linux
+[debug] [2025-03-01T07:34:01.731Z] Node Version:  v20.14.0
+[debug] [2025-03-01T07:34:01.732Z] Time:          Sat Mar 01 2025 09:34:01 GMT+0200 (South Africa Standard Time)
+[debug] [2025-03-01T07:34:01.732Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-01T07:34:01.957Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-01T07:34:01.957Z] > authorizing via signed-in user (khethukuthulasimamane@gmail.com)
+[debug] [2025-03-01T07:34:02.007Z] openjdk version "21.0.6" 2025-01-21 LTS
+
+[debug] [2025-03-01T07:34:02.007Z] OpenJDK Runtime Environment Temurin-21.0.6+7 (build 21.0.6+7-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.6+7 (build 21.0.6+7-LTS, mixed mode, sharing)
+
+[debug] [2025-03-01T07:34:02.013Z] Parsed Java major version: 21
+[info] i  emulators: Starting emulators: auth, firestore, dataconnect {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore, dataconnect"}}
+[debug] [2025-03-01T07:34:02.018Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-01T07:34:02.018Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-01T07:34:02.018Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-01T07:34:02.018Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  dataconnect: postgres server for dataconnect unable to start on port 5432, starting on 5435 instead. {"metadata":{"emulator":{"name":"dataconnect"},"message":"postgres server for dataconnect unable to start on port 5432, starting on 5435 instead."}}
+[debug] [2025-03-01T07:34:02.019Z] [dataconnect.postgres] postgres server for dataconnect only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-03-01T07:34:02.019Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8081}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"dataconnect":[{"address":"127.0.0.1","family":"IPv4","port":9399},{"address":"::1","family":"IPv6","port":9399}],"dataconnect.postgres":[{"address":"127.0.0.1","family":"IPv4","port":5435}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-03-01T07:34:02.025Z] [hub] writing locator at /tmp/hub-edumingle-5af98.json
+[warn] ⚠  firestore: Cloud Firestore Emulator does not support multiple databases yet. {"metadata":{"emulator":{"name":"firestore"},"message":"Cloud Firestore Emulator does not support multiple databases yet."}}
+[warn] ⚠  firestore: Did not find a Cloud Firestore rules file specified in a firebase.json config file. {"metadata":{"emulator":{"name":"firestore"},"message":"Did not find a Cloud Firestore rules file specified in a firebase.json config file."}}
+[warn] ⚠  firestore: The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"firestore"},"message":"The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2025-03-01T07:34:02.035Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-03-01T07:34:02.035Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-03-01T07:34:02.035Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/khetha/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8081,"--websocket_port",9150,"--project_id","edumingle-5af98","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8081} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/khetha/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8081,\"--websocket_port\",9150,\"--project_id\",\"edumingle-5af98\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8081}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2025-03-01T07:34:03.507Z] Mar 01, 2025 9:34:03 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:34:03 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2025-03-01T07:34:03.545Z] API endpoint: http://127.0.0.1:8081 {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:8081"}}
+[debug] [2025-03-01T07:34:03.545Z] 
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8081
+
+If you are running a Firestore in Datastore Mode project, run:
+
+   export DATASTORE_EMULATOR_HOST=127.0.0.1:8081
+
+Note: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8081\n\nIf you are running a Firestore in Datastore Mode project, run:\n\n   export DATASTORE_EMULATOR_HOST=127.0.0.1:8081\n\nNote: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-03-01T07:34:11.651Z] I0301 09:34:11.649739 2600380 control.go:59] [/emulator/backend 0a0a] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.649739 2600380 control.go:59] [/emulator/backend 0a0a] UpdateResources(): done\nSchema: sources: schema/schema.gql [2088B] \nConnector \"default\": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] \n"}}
+[debug] [2025-03-01T07:34:11.652Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-03-01T07:34:11.652Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"dataconnect"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2025-03-01T07:34:11.652Z] Starting Data Connect Emulator with command {"binary":"/home/khetha/.cache/firebase/emulators/dataconnect-emulator-1.8.3","args":["--logtostderr","-v=2","dev","--listen=127.0.0.1:9399,[::1]:9399","--config_dir=/home/khetha/newRepo/EduMingle/frontend/dataconnect","--enable_output_schema_extensions=true","--enable_output_generated_sdk=true"],"optionalArgs":["listen","config_dir","enable_output_schema_extensions","enable_output_generated_sdk"],"joinArgs":true,"shell":false,"port":9399} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Starting Data Connect Emulator with command {\"binary\":\"/home/khetha/.cache/firebase/emulators/dataconnect-emulator-1.8.3\",\"args\":[\"--logtostderr\",\"-v=2\",\"dev\",\"--listen=127.0.0.1:9399,[::1]:9399\",\"--config_dir=/home/khetha/newRepo/EduMingle/frontend/dataconnect\",\"--enable_output_schema_extensions=true\",\"--enable_output_generated_sdk=true\"],\"optionalArgs\":[\"listen\",\"config_dir\",\"enable_output_schema_extensions\",\"enable_output_generated_sdk\"],\"joinArgs\":true,\"shell\":false,\"port\":9399}"}}
+[info] i  dataconnect: Data Connect Emulator logging to dataconnect-debug.log {"metadata":{"emulator":{"name":"dataconnect"},"message":"Data Connect Emulator logging to \u001b[1mdataconnect-debug.log\u001b[22m"}}
+[debug] [2025-03-01T07:34:11.669Z] I0301 09:34:11.668093 2600391 load.go:37] Reloading schema and connectors...
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.668093 2600391 load.go:37] Reloading schema and connectors...\n"}}
+[info] i  dataconnect: Started up Postgres server, listening on {"address":"127.0.0.1","family":"IPv4","port":5435} {"metadata":{"emulator":{"name":"dataconnect"},"message":"Started up Postgres server, listening on {\"address\":\"127.0.0.1\",\"family\":\"IPv4\",\"port\":5435}"}}
+[debug] [2025-03-01T07:34:11.674Z] [Data Connect] Connecting to postgres://127.0.0.1:5435/fdcdb?sslmode=disable}...
+[debug] [2025-03-01T07:34:11.676Z] >>> [apiv2][query] POST http://127.0.0.1:9399/emulator/configure [none]
+[debug] [2025-03-01T07:34:11.676Z] >>> [apiv2][body] POST http://127.0.0.1:9399/emulator/configure {"connectionString":"postgres://127.0.0.1:5435/fdcdb?sslmode=disable","database":"fdcdb","serviceId":"backend","maxOpenConnections":1}
+[debug] [2025-03-01T07:34:11.678Z] *** [apiv2] error from fetch(http://127.0.0.1:9399/emulator/configure, {"headers":{},"method":"POST","body":"{\"connectionString\":\"postgres://127.0.0.1:5435/fdcdb?sslmode=disable\",\"database\":\"fdcdb\",\"serviceId\":\"backend\",\"maxOpenConnections\":1}"}): FetchError: request to http://127.0.0.1:9399/emulator/configure failed, reason: connect ECONNREFUSED 127.0.0.1:9399
+[debug] [2025-03-01T07:34:11.678Z] [Data Connect] Retrying connectToPostgress call (1 of 3 attempts): FirebaseError: Data Connect emulator: undefined
+[debug] [2025-03-01T07:34:11.700Z] I0301 09:34:11.700016 2600391 control.go:59] [/emulator/backend 04e4] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.700016 2600391 control.go:59] [/emulator/backend 04e4] UpdateResources(): done\nSchema: sources: schema/schema.gql [2088B] \nConnector \"default\": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] \n"}}
+[debug] [2025-03-01T07:34:11.718Z] I0301 09:34:11.717856 2600391 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector"
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.717856 2600391 codegen.go:82] [connector \"default\" javascriptSdk] Generating sources into \"/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector\"\n"}}
+[debug] [2025-03-01T07:34:11.720Z] I0301 09:34:11.720533 2600391 collector.go:107] schema extensions wrote into "/home/khetha/newRepo/EduMingle/frontend/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [65582B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.720533 2600391 collector.go:107] schema extensions wrote into \"/home/khetha/newRepo/EduMingle/frontend/dataconnect/.dataconnect/schema\"\nGenerated sources: prelude.gql [65582B] \n"}}
+[debug] [2025-03-01T07:34:11.722Z] I0301 09:34:11.722270 2600391 collector.go:107] connector "default" javascriptSdk wrote into "/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector"
+Generated sources: esm/package.json [17B] README.md [2740B] react/index.d.ts [0B] react/index.cjs.js [0B] react/esm/index.esm.js [0B] esm/index.esm.js [110B] index.cjs.js [146B] package.json [895B] react/package.json [468B] react/esm/package.json [17B] index.d.ts [246B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.722270 2600391 collector.go:107] connector \"default\" javascriptSdk wrote into \"/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector\"\nGenerated sources: esm/package.json [17B] README.md [2740B] react/index.d.ts [0B] react/index.cjs.js [0B] react/esm/index.esm.js [0B] esm/index.esm.js [110B] index.cjs.js [146B] package.json [895B] react/package.json [468B] react/esm/package.json [17B] index.d.ts [246B] \n"}}
+[debug] [2025-03-01T07:34:11.725Z] I0301 09:34:11.725465 2600391 installsdk.go:48] Package @firebasegen/default-connector is already installed. Skipping installation
+I0301 09:34:11.725498 2600391 load.go:115] Finished reloading
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.725465 2600391 installsdk.go:48] Package @firebasegen/default-connector is already installed. Skipping installation\nI0301 09:34:11.725498 2600391 load.go:115] Finished reloading\n"}}
+[debug] [2025-03-01T07:34:11.726Z] I0301 09:34:11.725684 2600391 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0301 09:34:11.725738 2600391 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:11.725684 2600391 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399\nI0301 09:34:11.725738 2600391 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399\n"}}
+[debug] [2025-03-01T07:34:13.679Z] [Data Connect] Connecting to postgres://127.0.0.1:5435/fdcdb?sslmode=disable}...
+[debug] [2025-03-01T07:34:13.679Z] >>> [apiv2][query] POST http://127.0.0.1:9399/emulator/configure [none]
+[debug] [2025-03-01T07:34:13.679Z] >>> [apiv2][body] POST http://127.0.0.1:9399/emulator/configure {"connectionString":"postgres://127.0.0.1:5435/fdcdb?sslmode=disable","database":"fdcdb","serviceId":"backend","maxOpenConnections":1}
+[debug] [2025-03-01T07:34:13.685Z] Frontend message 
+[debug] [2025-03-01T07:34:13.686Z] Backend message AuthenticationResponse
+[debug] [2025-03-01T07:34:13.687Z] Backend message ParameterStatus
+[debug] [2025-03-01T07:34:13.687Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:13.687Z] Frontend message Query
+[debug] [2025-03-01T07:34:14.128Z] Q   ; 
+[debug] [2025-03-01T07:34:14.129Z] Backend message EmptyQuery
+[debug] [2025-03-01T07:34:14.129Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.186Z] Frontend message Query
+[debug] [2025-03-01T07:34:14.206Z] Q   lSELECT setting FROM pg_settings WHERE name IN ('server_version_num', 'crdb_version') ORDER BY name DESC 
+[debug] [2025-03-01T07:34:14.206Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.207Z] Backend message DataRow
+[debug] [2025-03-01T07:34:14.207Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.207Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.247Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.250Z] P   � 
+SELECT
+	nspname AS schema_name,
+	pg_catalog.obj_description(oid) AS comment
+FROM
+    pg_catalog.pg_namespace
+WHERE
+    nspname = $1
+ORDER BY
+    nspname   
+[debug] [2025-03-01T07:34:14.250Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.251Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.251Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.251Z] D   S 
+[debug] [2025-03-01T07:34:14.252Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.252Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.252Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.252Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.252Z] S   
+[debug] [2025-03-01T07:34:14.253Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.293Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.295Z] B           public  
+[debug] [2025-03-01T07:34:14.295Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.295Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.295Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.300Z] E   	     
+[debug] [2025-03-01T07:34:14.300Z] Backend message DataRow
+[debug] [2025-03-01T07:34:14.300Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.300Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.300Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.301Z] S   
+[debug] [2025-03-01T07:34:14.301Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.337Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.338Z] P  / 
+SELECT
+	n.nspname AS schema_name,
+	e.enumtypid AS enum_id,
+	t.typname AS enum_name,
+	e.enumlabel AS enum_value
+FROM
+	pg_enum e
+	JOIN pg_type t ON e.enumtypid = t.oid
+	JOIN pg_namespace n ON t.typnamespace = n.oid
+WHERE
+    n.nspname IN ($1)
+ORDER BY
+    n.nspname, e.enumtypid, e.enumsortorder
+   
+[debug] [2025-03-01T07:34:14.338Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.339Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.339Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.339Z] D   S 
+[debug] [2025-03-01T07:34:14.340Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.340Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.340Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.340Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.340Z] S   
+[debug] [2025-03-01T07:34:14.340Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.380Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.385Z] B           public  
+[debug] [2025-03-01T07:34:14.385Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.385Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.386Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.386Z] E   	     
+[debug] [2025-03-01T07:34:14.387Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.387Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.387Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.387Z] S   
+[debug] [2025-03-01T07:34:14.388Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.426Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.438Z] P  0 
+SELECT
+	t3.oid,
+	t1.table_schema,
+	t1.table_name,
+	pg_catalog.obj_description(t3.oid, 'pg_class') AS comment,
+	t4.partattrs AS partition_attrs,
+	t4.partstrat AS partition_strategy,
+	pg_get_expr(t4.partexprs, t4.partrelid) AS partition_exprs
+FROM
+	INFORMATION_SCHEMA.TABLES AS t1
+	JOIN pg_catalog.pg_namespace AS t2 ON t2.nspname = t1.table_schema
+	JOIN pg_catalog.pg_class AS t3 ON t3.relnamespace = t2.oid AND t3.relname = t1.table_name
+	LEFT JOIN pg_catalog.pg_partitioned_table AS t4 ON t4.partrelid = t3.oid
+	LEFT JOIN pg_depend AS t5 ON t5.classid = 'pg_catalog.pg_class'::regclass::oid AND t5.objid = t3.oid AND t5.deptype = 'e'
+WHERE
+	t1.table_type = 'BASE TABLE'
+	AND NOT COALESCE(t3.relispartition, false)
+	AND t1.table_schema IN ($1)
+	AND t5.objid IS NULL
+ORDER BY
+	t1.table_schema, t1.table_name
+   
+[debug] [2025-03-01T07:34:14.438Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.438Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.438Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.439Z] D   S 
+[debug] [2025-03-01T07:34:14.439Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.439Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.440Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.440Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.441Z] S   
+[debug] [2025-03-01T07:34:14.441Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.479Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.491Z] B           public  
+[debug] [2025-03-01T07:34:14.491Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.491Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.491Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.492Z] E   	     
+[debug] [2025-03-01T07:34:14.493Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.493Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.493Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.494Z] S   
+[debug] [2025-03-01T07:34:14.494Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.532Z] Frontend message Query
+[debug] [2025-03-01T07:34:14.534Z] Q   %SELECT extname FROM pg_extension 
+[debug] [2025-03-01T07:34:14.534Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.535Z] Backend message DataRow
+[debug] [2025-03-01T07:34:14.535Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.535Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.575Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.576Z] P   � 
+SELECT
+	nspname AS schema_name,
+	pg_catalog.obj_description(oid) AS comment
+FROM
+    pg_catalog.pg_namespace
+WHERE
+    nspname = $1
+ORDER BY
+    nspname   
+[debug] [2025-03-01T07:34:14.576Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.577Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.577Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.577Z] D   S 
+[debug] [2025-03-01T07:34:14.577Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.577Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.577Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.577Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.578Z] S   
+[debug] [2025-03-01T07:34:14.578Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.618Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.620Z] B           public  
+[debug] [2025-03-01T07:34:14.621Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.621Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.621Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.623Z] E   	     
+[debug] [2025-03-01T07:34:14.623Z] Backend message DataRow
+[debug] [2025-03-01T07:34:14.624Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.624Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.624Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.626Z] S   
+[debug] [2025-03-01T07:34:14.626Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.663Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.665Z] P  / 
+SELECT
+	n.nspname AS schema_name,
+	e.enumtypid AS enum_id,
+	t.typname AS enum_name,
+	e.enumlabel AS enum_value
+FROM
+	pg_enum e
+	JOIN pg_type t ON e.enumtypid = t.oid
+	JOIN pg_namespace n ON t.typnamespace = n.oid
+WHERE
+    n.nspname IN ($1)
+ORDER BY
+    n.nspname, e.enumtypid, e.enumsortorder
+   
+[debug] [2025-03-01T07:34:14.665Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.666Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.666Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.667Z] D   S 
+[debug] [2025-03-01T07:34:14.667Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.668Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.668Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.668Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.669Z] S   
+[debug] [2025-03-01T07:34:14.671Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.707Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.712Z] B           public  
+[debug] [2025-03-01T07:34:14.712Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.713Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.713Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.715Z] E   	     
+[debug] [2025-03-01T07:34:14.716Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.716Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.717Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.719Z] S   
+[debug] [2025-03-01T07:34:14.719Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.754Z] Frontend message Parse
+[debug] [2025-03-01T07:34:14.756Z] P  0 
+SELECT
+	t3.oid,
+	t1.table_schema,
+	t1.table_name,
+	pg_catalog.obj_description(t3.oid, 'pg_class') AS comment,
+	t4.partattrs AS partition_attrs,
+	t4.partstrat AS partition_strategy,
+	pg_get_expr(t4.partexprs, t4.partrelid) AS partition_exprs
+FROM
+	INFORMATION_SCHEMA.TABLES AS t1
+	JOIN pg_catalog.pg_namespace AS t2 ON t2.nspname = t1.table_schema
+	JOIN pg_catalog.pg_class AS t3 ON t3.relnamespace = t2.oid AND t3.relname = t1.table_name
+	LEFT JOIN pg_catalog.pg_partitioned_table AS t4 ON t4.partrelid = t3.oid
+	LEFT JOIN pg_depend AS t5 ON t5.classid = 'pg_catalog.pg_class'::regclass::oid AND t5.objid = t3.oid AND t5.deptype = 'e'
+WHERE
+	t1.table_type = 'BASE TABLE'
+	AND NOT COALESCE(t3.relispartition, false)
+	AND t1.table_schema IN ($1)
+	AND t5.objid IS NULL
+ORDER BY
+	t1.table_schema, t1.table_name
+   
+[debug] [2025-03-01T07:34:14.756Z] Backend message ParseComplete
+[debug] [2025-03-01T07:34:14.756Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.756Z] Frontend message Describe
+[debug] [2025-03-01T07:34:14.757Z] D   S 
+[debug] [2025-03-01T07:34:14.757Z] Backend message ParameterDescriptionMessage
+[debug] [2025-03-01T07:34:14.757Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.757Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.757Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.758Z] S   
+[debug] [2025-03-01T07:34:14.758Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.798Z] Frontend message Bind
+[debug] [2025-03-01T07:34:14.802Z] B           public  
+[debug] [2025-03-01T07:34:14.802Z] Backend message BindComplete
+[debug] [2025-03-01T07:34:14.803Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.803Z] Frontend message Execute
+[debug] [2025-03-01T07:34:14.804Z] E   	     
+[debug] [2025-03-01T07:34:14.804Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.804Z] Filtered out a ReadyForQuery.
+[debug] [2025-03-01T07:34:14.804Z] Frontend message Sync
+[debug] [2025-03-01T07:34:14.804Z] S   
+[debug] [2025-03-01T07:34:14.805Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.844Z] Frontend message Query
+[debug] [2025-03-01T07:34:14.845Z] Q   %SELECT extname FROM pg_extension 
+[debug] [2025-03-01T07:34:14.845Z] Backend message RowDescriptionMessage
+[debug] [2025-03-01T07:34:14.845Z] Backend message DataRow
+[debug] [2025-03-01T07:34:14.845Z] Backend message CommandComplete
+[debug] [2025-03-01T07:34:14.845Z] Backend message ReadyForQuery
+[debug] [2025-03-01T07:34:14.895Z] I0301 09:34:14.895107 2600391 control.go:59] [/emulator/backend fbb3] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 
+ {"metadata":{"emulator":{"name":"dataconnect"},"message":"I0301 09:34:14.895107 2600391 control.go:59] [/emulator/backend fbb3] UpdateResources(): done\nSchema: sources: schema/schema.gql [2088B] \nConnector \"default\": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] \n"}}
+[debug] [2025-03-01T07:34:14.897Z] <<< [apiv2][status] POST http://127.0.0.1:9399/emulator/configure 200
+[debug] [2025-03-01T07:34:14.897Z] <<< [apiv2][body] POST http://127.0.0.1:9399/emulator/configure {}
+[debug] [2025-03-01T07:34:14.898Z] [Data Connect] Successfully connected to postgres://127.0.0.1:5435/fdcdb?sslmode=disable}
+[debug] [2025-03-01T07:34:14.903Z] >>> [apiv2][query] GET http://127.0.0.1:9399/emulator/info [none]
+[debug] [2025-03-01T07:34:14.904Z] <<< [apiv2][status] GET http://127.0.0.1:9399/emulator/info 200
+[debug] [2025-03-01T07:34:14.904Z] <<< [apiv2][body] GET http://127.0.0.1:9399/emulator/info {"version":"","services":[{"serviceId":"backend","connectionString":"dbname='fdcdb' host='127.0.0.1' port='5435' sslmode='disable' dbname='fdcdb'"}]}
+[debug] [2025-03-01T07:34:14.908Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8081 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Data Connect   │ 127.0.0.1:9399 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-03-01T07:34:22.301Z] Mar 01, 2025 9:34:22 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:34:22 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-03-01T07:34:25.647Z] Mar 01, 2025 9:34:25 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:34:25 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-03-01T07:34:25.653Z] Mar 01, 2025 9:34:25 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:34:25 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-03-01T07:35:24.207Z] Mar 01, 2025 9:35:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:35:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-03-01T07:35:24.338Z] Mar 01, 2025 9:35:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar 01, 2025 9:35:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-03-01T07:36:20.867Z] Received signal SIGINT (Ctrl-C) 1
+[info]  
+[info] i  emulators: Received SIGINT (Ctrl-C) for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGINT (Ctrl-C) signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[debug] [2025-03-01T07:36:20.872Z] *** shutting down gRPC server since JVM is shutting down
+ {"metadata":{"emulator":{"name":"firestore"},"message":"*** shutting down gRPC server since JVM is shutting down\n"}}
+[debug] [2025-03-01T07:36:20.882Z] *** server shut down
+ {"metadata":{"emulator":{"name":"firestore"},"message":"*** server shut down\n"}}
+[info] i  auth: Stopping Authentication Emulator {"metadata":{"emulator":{"name":"auth"},"message":"Stopping Authentication Emulator"}}
+[info] i  dataconnect: Stopping Data Connect Emulator {"metadata":{"emulator":{"name":"dataconnect"},"message":"Stopping Data Connect Emulator"}}
+[debug] [2025-03-01T07:36:21.272Z] Postgres client disconnected
+[warn] ⚠  Data Connect Emulator has exited upon receiving signal: SIGINT 
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2025-03-01T07:36:21.285Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[debug] [2025-03-01T07:36:26.991Z] Error: Timed out.
+    at Timeout._onTimeout (/usr/local/lib/node_modules/firebase-tools/lib/utils.js:269:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.

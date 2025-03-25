@@ -1,0 +1,31 @@
+  .inputbox {
+    background: #f1f1f1;
+    border-radius: 15px;
+    width: 100%;
+    height: 35px;
+    /* position: absolute; */
+    /* left: 52px; */
+    top: 50px;
+    /* text-align:center; */
+    padding-left: 30px;
+    
+  }
+
+  .inputbox:focus {
+    outline: 2px solid #00bba7;
+    border-color: #00bba7;
+  }
+
+    .inputbox::placeholder {
+    font-size: 15px;
+    /* padding-left: 15px; */
+
+}
+
+  .searchIcon {
+    width: 30px;
+    height: 30px;
+    /* position: absolute; */
+    right: 200px;
+    top: 100px;
+  }

@@ -1,0 +1,145 @@
+<div class="communities-home bg-white relative p-4">
+  <app-inside-nav></app-inside-nav>
+
+  <div class="mt-[60px]">
+    <!-- Search -->
+    <div
+      class="flex items-center bg-gray-200 rounded-lg px-4 py-3 mx-auto relative"
+    >
+      <img src="search0.svg" class="w-6 h-6 absolute right-4" />
+      <input
+        type="text"
+        placeholder="Search"
+        class="bg-transparent outline-none w-full"
+      />
+    </div>
+
+    <!-- Subjects -->
+    <!-- <div class="flex gap-2 overflow-x-auto mt-6 px-2 text-center">
+      <div
+        class="bg-teal-600 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        Math
+      </div>
+      <div
+        class="bg-gray-500 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        English
+      </div>
+      <div
+        class="bg-gray-500 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        Afrikaans
+      </div>
+      <div
+        class="bg-gray-500 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        CAT
+      </div>
+      <div
+        class="bg-gray-600 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        Humanities
+      </div>
+      <div
+        class="bg-gray-600 text-white text-xs font-bold px-4 py-2 rounded-lg h-[30px]"
+      >
+        Accounting
+      </div>
+    </div> -->
+
+    <!-- Communities -->
+
+    <div class="mt-6 space-y-4">
+      @for(item of this.communityService.yourCommunities(); track $index){
+
+      <div
+        class=" border border-gray-400 rounded-lg p-4 mx-auto flex "
+      >
+        <div class="flex">
+          <img [src]="item.communityPicture" class="w-12 h-12 rounded-full" />
+          <div class="comName ml-4">
+            <h3 class="font-sm ">{{ item.name }}</h3>
+            <p class="text-xs text-gray-600">
+              {{ item.description }}
+            </p>
+            <p class="text-xs text-gray-1000">
+              {{ item.communityMembersNumber }} members
+            </p>
+          </div>
+          @if(this.communityService.isAdmin(item.id)){
+          <i
+            class=" fas fa-trash text-red-600 cursor-pointer absolute left-[350px]"
+            (click)="this.communityService.deleteCommunityService(item.id)"
+            title="Delete Community"
+          ></i>
+          } @else {
+          <app-report-modal class="mb-10 ml-[180px]"></app-report-modal>
+          }
+        </div>
+        <div class="self-end mt-2">
+          <a
+            class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm relative left-[-40px]"
+            routerLink="/communityDiscussions"
+            (click)="onClick(item.id)"
+            >Joined</a
+          >
+        </div>
+      </div>
+      }
+      <!-- @for(item of this.communityService.publicCommunitiesToJoin; track $index){
+      <div   (click)="onClick(item.id)"
+        class="bg-white border border-teal-400 rounded-lg p-4 mx-auto flex flex-col"
+      >
+        <div class="flex items-center">
+          <img [src]="item.communityPicture" class="w-12 h-12 rounded-full" />
+          <div class="ml-4">
+            <h3 class="font-medium" >{{item.name}}</h3>
+            <p class="text-xs text-gray-600">
+              {{item.description}}
+            </p>
+            <p class="text-xs text-gray-500">{{item.communityMembersNumber}} members</p>
+          </div>
+        </div>
+        <div class="self-end mt-2">
+
+            <a class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm"
+            (click)="addCommunityMember()"
+            >Join</a
+          >
+        </div>
+      </div>
+    } -->
+
+      <!-- <div
+        *ngFor="let item of listOfCommunities; trackBy: trackByIndex"
+        class="bg-white border border-teal-400 rounded-lg p-4 w-5/6 mx-auto flex flex-col"
+      >
+        <div class="flex items-center">
+          <img src="frame-394611.png" class="w-12 h-12 rounded-full" />
+          <div class="ml-4">
+            <h3 class="font-medium">{{ item.name }}</h3>
+            <p class="text-xs text-gray-600">{{ item.description }}</p>
+            <p class="text-xs text-gray-500">
+              {{ item.communityMembersNumber }} members
+            </p>
+          </div>
+        </div>
+        <div class="self-end mt-4">
+          <a
+            routerLink="/communityDiscussion"
+            class="bg-teal-600 text-white px-4 py-2 rounded-lg text-sm"
+            >Join</a
+          >
+        </div>
+      </div> -->
+    </div>
+    <a
+      routerLink="/community"
+      class="fixed bottom-4 right-4 bg-teal-600 text-white p-4 mb-[60px] rounded-full shadow-lg"
+    >
+      <i class="fas fa-plus"></i>
+    </a>
+  </div>
+</div>
+<app-navbar></app-navbar>

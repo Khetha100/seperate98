@@ -1,0 +1,77 @@
+/* 
+.forgot-password-text:hover {
+    text-decoration: underline;
+    color: #00967D;
+    font-size: 16px;
+    transition: #00967D 0.3s ease-in-out;
+
+}
+
+.sign-up-text:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #00967D;
+    font-size: 16px;
+}
+
+
+
+.sign-in-btn{
+    background-color: #00967D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background-color: white;
+    color: #00967D;
+    border: 1px solid #00967D;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+
+
+
+.forgot-password-text:hover {
+    text-decoration: underline;
+    color: #00967D;
+    font-size: 16px;
+    transition: #00967D 0.3s ease-in-out;
+
+}
+
+.sign-up-text:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #00967D;
+    font-size: 16px;
+}
+
+
+
+.sign-in-btn{
+    background-color: #00967D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sign-in-btn:hover {
+    background-color: white;
+    color: #00967D;
+    border: 1px solid #00967D;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}

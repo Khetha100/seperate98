@@ -1,0 +1,220 @@
+<!-- <div
+  class="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-5"
+>
+  <div
+    class="w-full justify-center items-center max-w-md bg-white shadow-lg rounded-lg p-10"
+  >
+    <div class="heading text-center">
+      <h1 class="text-3xl font-bold mb-6 text-gray-900">
+        <span class="text-black">Edu</span>
+        <span class="text-[#00bba7] italic">M</span>
+        <span class="text-black">ingle</span>
+      </h1>
+    </div>
+
+    <div class="flex justify-center font-bold p-6 mb-6 text`">Welcome back</div>
+
+    <form [formGroup]="signinForm" class="space-y-4">
+
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Phone Number</label>
+        <input
+          type="tel"
+          formControlName="phoneNumber"
+          placeholder="+27 68 148 1174"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+
+        <div
+          *ngIf="
+            signinForm.controls['phoneNumber']?.touched &&
+            signinForm.controls['phoneNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a 10-digit phone number.
+        </div>
+      </div>
+
+      <div *ngIf="selectedRole === 'teacher'">
+        <label class="block text-xs mb-1 text-gray-700">SACE Number</label>
+        <input
+          type="text"
+          formControlName="saceNumber"
+          placeholder="000123456789"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+        />
+        <div
+          *ngIf="
+            signinForm.controls['saceNumber']?.touched &&
+            signinForm.controls['saceNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid SACE number.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="********"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signinForm.controls['password']?.touched &&
+            signinForm.controls['password']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid password.
+        </div>
+        <h1 class="forgot-password-text text-black text-xs mt-2" routerLink="/forgotPassword">Forgot Password</h1>
+
+
+      </div>
+
+      <button
+        type="submit"
+        (click)="onSubmit()"
+        class="sign-in-btn w-full bg-[#00bba7] text-white rounded-lg transition"
+        routerLink="/About-You"
+        [disabled]="signinForm.invalid"
+      >
+        Sign In
+      </button>
+      <div>
+        <span class="text-black text-xs">Don't have an account? </span>
+        <a routerLink="/signup" class="sign-up-text text-teal-500 text-xs cursor-pointer">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+ -->
+
+<div
+  class="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-5"
+>
+  <div
+    class="w-full justify-center items-center max-w-md bg-white shadow-lg rounded-lg p-10"
+  >
+    <div class="heading text-center">
+      <h1 class="text-3xl font-bold mb-6 text-gray-900">
+        <span class="text-black">Edu</span>
+        <span class="text-[#00bba7] italic">M</span>
+        <span class="text-black">ingle</span>
+      </h1>
+    </div>
+
+    <div class="flex justify-center font-bold p-6 mb-6 text`">Welcome back</div>
+
+    <!-- Sign-Up Form -->
+    <form [formGroup]="signinForm" class="space-y-4" >
+      <!-- Role Selection -->
+      <!-- <div class="flex text-sm justify-center gap-3 m-4"> -->
+      <!-- <input  class="student-input"
+        type="radio"
+        name="role"
+        formControlName="role"communityCreate
+        (change)="onRoleChange('student')"
+        value="learner"> Student<br>
+
+        <input class="student-input"
+         type="radio"
+         name="role"
+         formControlName="role"
+        (change)="onRoleChange('teacher')"
+         value="teacher"> Teacher<br>
+         <div *ngIf="signinForm.controls['role']?.touched && signinForm.controls['role']?.invalid" class="text-red-500 text-xs mt-1 text-center">
+          Please select a role.
+        </div>
+      </div> -->
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Phone Number</label>
+        <input
+          type="tel"
+          formControlName="phoneNumber"
+          placeholder="068 148 1174"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+
+        <div
+          *ngIf="
+            signinForm.controls['phoneNumber']?.touched &&
+            signinForm.controls['phoneNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a 10-digit phone number.
+        </div>
+      </div>
+
+      <!-- SACE Number (Only for Teachers) -->
+      <!-- <div *ngIf="selectedRole === 'teacher'">
+        <label class="block text-xs mb-1 text-gray-700">SACE Number</label>
+        <input
+          type="text"
+          formControlName="saceNumber"
+          placeholder="000123456789"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+        />
+        <div
+          *ngIf="
+            signinForm.controls['saceNumber']?.touched &&
+            signinForm.controls['saceNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid SACE number.
+        </div>
+      </div> -->
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="password"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signinForm.controls['password']?.touched &&
+            signinForm.controls['password']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid password.
+        </div>
+        <h1 class="forgot-password-text text-black text-xs mt-4 underline" routerLink="/forgotPassword">Forgot Password</h1>
+
+
+      </div>
+
+      <button
+        type="submit"
+        (click)="onSubmit()"
+        class="sign-in-btn w-full bg-[#00bba7] text-white rounded-lg transition"
+        [disabled]="signinForm.invalid"
+      >
+        Sign In
+      </button>
+      <div>
+        <span class="text-black text-xs">Don't have an account? </span>
+        <a routerLink="/signup" class="sign-up-text text-teal-500 text-xs cursor-pointer">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>

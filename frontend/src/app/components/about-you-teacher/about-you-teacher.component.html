@@ -1,0 +1,157 @@
+<!-- 
+
+<div  class="absolute top-6 right-6 text-teal-700 font-bold text-xs mb-3 cursor-pointer" (click)="goNext()">
+    Skip
+  </div>
+  
+   Skip Button available only in step 1
+  <div *ngIf="step > 1" class="absolute top-6 left-4 w-6 h-6 cursor-pointer" (click)="goBack()">
+    <img class="w-full h-full" src="arrow-left1.svg" alt="Back">
+  </div> 
+  <div class="container  flex items-center justify-center h-screen">
+  
+   
+    
+    Main Card
+    <div class="border border-teal-600 rounded-lg w-80  p-5 flex flex-col items-center gap-8 relative">
+      
+       Step 1: Welcome Screen -->
+<!--     
+      <div *ngIf="step === 1" class="flex flex-col items-center gap-4">
+        <div class="w-20 h-20 bg-teal-600 rounded-full flex items-center justify-center">
+          <span class="text-white text-2xl font-light">{{ firstName.charAt(0) }}</span>
+        </div>
+        <div class="text-gray-800 font-semibold text-base text-center">Hello, Teacher {{ user.firstName }}!</div>
+        <div class="text-gray-500 px-5 text-center text-sm font-light">
+          Your answers to the next few questions will help us find the right ideas for you.<br />
+          If desired, you’re allowed to skip.
+        </div>
+      </div> -->
+  
+      <!-- Step 2: Grade Selection -->
+      <!-- <div *ngIf="step === 2" class="absolute top-6 right-6 text-teal-700 font-bold text-xs cursor-pointer">
+        Skip
+      </div> -->
+      <!-- <div *ngIf="step === 2" class="flex flex-col items-center gap-4">
+        <h2 class="text-gray-800 font-semibold text-lg">Select The Grades you Teach</h2>
+        <div class="grid grid-cols-3 gap-3">
+          <button *ngFor="let grade of grades" (click)="selectGrade(grade.name)" 
+                  class="w-16 h-16 border rounded-lg text-gray-800 font-bold flex items-center justify-center"
+                  [class.bg-teal-600]="selectedGrade.includes(grade.name)"
+                  [class.text-white]="selectedGrade.includes(grade.name)"
+                  >
+            {{ grade.name }}
+          </button>
+        </div> -->
+  
+        <!-- <p *ngIf="!userChoseGrade && step === 2" class="error-message text-red-500 text-sm">
+          Select a grade.
+        </p>
+      </div>
+   -->
+      <!-- Step 3: Subject Selection -->
+      <!-- <div *ngIf="step === 3" class="absolute top-6 right-6 text-teal-700 font-bold text-xs cursor-pointer">
+        Skip
+      </div> -->
+      <!-- <div *ngIf="step === 3" class="flex flex-col items-center gap-6">
+        <h2 class="text-gray-800 font-semibold text-lg">Select The Subjects You Teach</h2>
+         <h1>this owrks</h1> -->
+        <!-- <div class="grid grid-cols-2 gap-2">
+          <button *ngFor="let subject of subjects" 
+                  class="w-32 h-12 border rounded-lg text-gray-800 font-bold flex items-center justify-center"
+                  [class.bg-teal-600]="selectedSubjects.includes(subject.name)"
+                  [class.text-white]="selectedSubjects.includes(subject.name)"
+                  (click)="toggleSubject(subject.name)">
+            {{ subject.name }}
+          </button>
+        </div>
+        <p *ngIf="!userChoseSubjects && step === 3" class=" error-message text-red-500 text-sm">
+          Select at least 2 subjects.
+        </p>
+      </div> 
+   -->
+      <!-- Step 4: Confirmation Page -->
+      <!-- <div *ngIf="step === 4" class="absolute top-6 right-6 text-teal-700 font-bold text-xs cursor-pointer">
+        Skip
+      </div> -->
+      <!-- <div *ngIf="step === 4" class="confirm-subject-container flex flex-col items-center gap-4">
+        <h2 class="you-have-selected-text font-semibold text-sm">You have selected</h2>
+        <div class="hr-line"></div>
+  
+        
+        <p class="text-[#146356] text-sm" >Grade: <strong>{{ selectedGrade }}</strong></p>
+        <p class="text-[#146356] text-sm p-1">Subjects:</p>
+        <div class="hr-line"></div>
+  
+        <ul class="text-[#146356]" list-disc>
+          <li *ngFor="let subject of selectedSubjects">{{ subject }}</li>
+        </ul> -->
+  
+        
+  
+      <!-- </div> -->
+      
+      
+  
+      <!-- Next Button (Hidden on Confirmation Page) -->
+      <!-- <button *ngIf="step < 4"
+        class="w-full h-10 bottom-3 bg-teal-600 text-white font-bold text-lg rounded-full flex items-center justify-center cursor-pointer"
+        [disabled]="step === 3 && selectedSubjects.length < 2 || step === 2 && selectedGrade == null "
+        (click)="goNext()">
+        Next
+      </button>
+   -->
+      <!-- this div is for the 2 buttons, cancel and confirm -->
+  
+      <!-- <div *ngIf="step >= 4" class="confirm-subject-container-btns gap-3 flex ">
+        <button class="confirm-subject-btn" (click)="submit()">
+          Confirm
+    
+        </button>
+  
+        <button class="cancel-subject-btn">
+          Cancel
+    
+        </button>
+  
+  
+      </div> -->
+  
+  
+       <!-- Step Counter should be at the bottom the whole time-->
+       <!-- <div class=" text-center text-gray-500 text-xs font-bold">
+        {{ step }}/4
+      </div>
+  
+    </div>
+  
+    
+  
+  
+  </div> -->
+  
+  
+  
+  
+  <!-- 
+   Step 1: Select Grade -->
+  <!-- <h3>Select your Grade</h3>
+  <select (change)="onGradeSelect($event.target.value)">
+    <option *ngFor="let grade of grades" [value]="grade">{{ grade }}</option>
+  </select> -->
+  
+  <!-- Step 2: Select Subjects (Only shows when a grade is selected) -->
+  <!-- <div *ngIf="selectedGrade">
+    <h3>Subjects for {{ selectedGrade }}</h3>
+    <div *ngIf="subjects.length > 0; else noSubjects">
+      <ul>
+        <li *ngFor="let subject of subjects">
+          <input type="checkbox" [value]="subject"> {{ subject }}
+        </li>
+      </ul>
+    </div>
+    <ng-template #noSubjects>
+      <p>No subjects available.</p>
+    </ng-template>
+  </div>  -->
+  

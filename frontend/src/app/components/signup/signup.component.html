@@ -1,0 +1,405 @@
+<!-- <div
+  class="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-5"
+>
+  <div
+    class="w-full justify-center items-center mt-5 max-w-md bg-white shadow-lg rounded-lg p-6"
+  >
+    <div class="heading text-center">
+      <h1 class="text-3xl font-bold text-gray-900">
+        <span class="text-black">Edu</span>
+        <span class="text-[#00bba7] italic">M</span>
+        <span class="text-black">ingle</span>
+      </h1>
+    </div>
+
+    <h2 class="text- font-bold text-center mt-2 text-gray-800">
+      Interact with your peers. Sign up.
+    </h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div class="flex text-sm justify-center gap-3 m-4">
+        <input
+          title="student"
+          class="student-input"
+          type="radio"
+          name="role"
+          formControlName="role"
+          (change)="onRoleChange('student')"
+          value="student"
+        />
+        Student<br />
+
+        <input
+          title="teacher"
+          class="student-input"
+          type="radio"
+          name="role"
+          formControlName="role"
+          (change)="onRoleChange('teacher')"
+          value="teacher"
+        />
+        Teacher<br />
+        <div
+          *ngIf="
+            signupForm.controls['role']?.touched &&
+            signupForm.controls['role']?.invalid
+          "
+          class="text-red-500 text-xs mt-1 text-center"
+        >
+          Please select a role.
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Full Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Enter your name here"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['name']?.touched &&
+            signupForm.controls['name']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a name.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Surname</label>
+        <input
+          type="text"
+          formControlName="surname"
+          placeholder="Enter your surname here"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['surname']?.touched &&
+            signupForm.controls['surname']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter your surname.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Phone Number</label>
+        <input
+          type="tel"
+          formControlName="phoneNumber"
+          placeholder="+27 68 148 1174"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+
+        <div
+          *ngIf="
+            signupForm.controls['phoneNumber']?.touched &&
+            signupForm.controls['phoneNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a 10-digit phone number.
+        </div>
+      </div>
+
+      <div *ngIf="selectedRole === 'teacher'">
+        <label class="block text-xs mb-1 text-gray-700">SACE Number</label>
+        <input
+          type="text"
+          formControlName="saceNumber"
+          placeholder="000123456789"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+        />
+        <div
+          *ngIf="
+            signupForm.controls['saceNumber']?.touched &&
+            signupForm.controls['saceNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid SACE number.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="********"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['password']?.touched &&
+            signupForm.controls['password']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid password.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Confirm Password</label>
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="********"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="signupForm.controls['confirmPassword']?.errors?.['passwordMismatch'] && signupForm.controls['confirmPassword']?.touched"
+          class="text-red-500 text-xs mt-1"
+        >
+          Password does not match.
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="sign-up-btn w-full bg-[#00bba7] text-white rounded-lg transition"
+        (onclick)="onSubmit()"
+      >
+        Sign Up
+      </button>
+
+      <div>
+        <span class="text-black text-xs">Already have an account? </span>
+        <a>
+          <span
+            class="sign-in-text text-teal-500 text-xs cursor-pointer"
+            routerLink="/signin"
+            >Sign In</span
+          ></a
+        >
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div
+  class="min-h-screen flex flex-col justify-center items-center bg-gray-100 p-5"
+>
+  <div
+    class="w-full justify-center items-center mt-5 max-w-md bg-white shadow-lg rounded-lg p-6"
+  >
+    <div class="heading text-center">
+      <h1 class="text-3xl font-bold text-gray-900">
+        <span class="text-black">Edu</span>
+        <span class="text-[#00bba7] italic">M</span>
+        <span class="text-black">ingle</span>
+      </h1>
+    </div>
+
+    <h2 class="text- font-bold text-center mt-2 text-gray-800">
+      Interact with your peers. Sign up.
+    </h2>
+
+    <!-- Sign-Up Form -->
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-4">
+       <!-- Role Selection with Custom Radio Buttons -->
+      <div class="flex justify-center gap-6 m-4">
+        <label class="radio-container">
+          <input
+            type="radio"
+            name="role"
+            (change)="onRoleChange('STUDENT')"
+            value="student"
+          />
+          <span class="radio-checkmark"></span>
+          <span class="radio-label">Student</span>
+        </label>
+
+        <label class="radio-container">
+          <input
+            type="radio"
+            name="role"
+
+            (change)="onRoleChange('TEACHER')"
+            value="teacher"
+          />
+          <span class="radio-checkmark"></span>
+          <span class="radio-label">Teacher</span>
+        </label>
+        <!-- <label class="radio-container">
+
+        <input type="radio" name="role" checked formControlName="role"> Option 1
+        </label>
+        <label class="radio-container">
+
+        <input type="radio" name="role" > Option 2
+        </label> -->
+      </div>
+      <div
+        *ngIf="signupForm.controls['role']?.touched && signupForm.controls['role']?.invalid"
+        class="text-red-500 text-xs mt-1 text-center"
+      >
+        Please select a role.
+      </div>
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">First Name</label>
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="Enter your name here"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['firstName']?.touched &&
+            signupForm.controls['firstName']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a name.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Last Name</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Enter your surname here"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['lastName']?.touched &&
+            signupForm.controls['lastName']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter your surname.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Phone Number</label>
+        <input
+          type="tel"
+          formControlName="phone"
+          placeholder="068 148 1174"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+
+        <div
+          *ngIf="
+            signupForm.controls['phone']?.touched &&
+            signupForm.controls['phone']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a 10-digit phone number.
+        </div>
+      </div>
+
+      <!-- SACE Number (Only for Teachers) -->
+      <div *ngIf="selectedRole === 'TEACHER'">
+        <label class="block text-xs mb-1 text-gray-700">SACE Number</label>
+        <input
+          type="text"
+          formControlName="saceNumber"
+          placeholder="000123456789"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+        />
+        <div
+          *ngIf="
+            signupForm.controls['saceNumber']?.touched &&
+            signupForm.controls['saceNumber']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid SACE number.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="
+            signupForm.controls['password']?.touched &&
+            signupForm.controls['password']?.invalid
+          "
+          class="text-red-500 text-xs mt-1"
+        >
+          Please enter a valid password.
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-xs mb-1 text-gray-700">Confirm Password</label>
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Password"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#00bba7]"
+          required
+        />
+        <div
+          *ngIf="signupForm.controls['confirmPassword']?.errors?.['passwordMismatch'] && signupForm.controls['confirmPassword']?.touched"
+          class="text-red-500 text-xs mt-1"
+        >
+          Password does not match.
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="sign-up-btn w-full bg-[#00bba7] text-white rounded-lg transition"
+        (onclick)="onSubmit()"
+      >
+      <!-- Loader -->
+       <span *ngIf="!loading">Sign Up</span>
+        <div *ngIf="loading" class="inline-spinner"></div>
+      </button>
+
+
+
+
+
+      <!-- <ngx-ui-loader></ngx-ui-loader> -->
+
+
+      <div>
+        <span class="text-black text-xs">Already have an account? </span>
+        <a>
+          <span
+            class="sign-in-text text-teal-500 text-xs cursor-pointer"
+            routerLink="/signin"
+            >Sign In</span
+          ></a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Full-screen Loader Overlay -->
+<div *ngIf="loading" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white p-5 rounded-lg flex flex-col items-center">
+    <div class="spinner mb-3"></div>
+    <p class="text-gray-700">Creating your account...</p>
+  </div>
+</div>

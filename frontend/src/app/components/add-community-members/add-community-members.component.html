@@ -1,0 +1,74 @@
+<!-- <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div class="flex min-h-300px items-centre justify-center p-4 text-center sm:items-center sm:p-0">
+
+      <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <h3 class="text-base font-semibold text-gray-900" id="modal-title"> Add members to the community </h3>
+
+              <div class="flex">
+                <form FormGroup="searchForm">
+                 <input class="inputbox text-left" formControlName="searchPeople" placeholder="Find people"/>
+
+                <img (click)="searchPersonFunct()" class="searchIcon   -ml-9" src="icons/searchIcon.svg" />
+                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+          <button type="button" class="inline-flex w-full justify-center rounded-md bg-[#00bba7] px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-white-500 sm:ml-3 sm:w-auto">Add to community</button>
+          <button (click)="close()" type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div class="flex min-h-300px items-centre justify-center p-4 text-center sm:items-center sm:p-0">
+
+      <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <form [formGroup]="searchForm">
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <h3 class="text-base font-semibold text-gray-900" id="modal-title"> Add members to the community to join </h3>
+              <div class="flex">
+                <input formControlName="searchPeople" class="inputbox text-left" placeholder="Find people"/>
+                <img (click)="searchPersonFunct()" class="searchIcon   -ml-9" src="icons/searchIcon.svg" />
+
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+
+        @for(item of searchResult; track $index){
+          <div class="flex justify-between">
+            <div class="flex m-4 gap-2">
+              <img class="image rounded-full w-8 h-8 mb-3" routerLink="/user-profile" [src]="item.imageUrl" />
+            <div class="name" routerLink="/user-profile">{{item.firstName}}  {{item.lastName}} </div>
+            </div>
+            @if(item.id){
+              <button (click)="addCommunityMember(item.id)" type="button" class="inline-flex w-[70px] h-[40px] justify-center mt-[10px] mr-4 rounded-md bg-[#00bba7] text-sm font-semibold text-white shadow-xs hover:bg-white-500 sm:ml-3 sm:w-auto text-center pt-2">Add</button>
+            }
+
+          </div>
+        }
+
+
+        <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+
+          <button (click)="close()" type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

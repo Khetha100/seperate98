@@ -1,0 +1,188 @@
+<!-- https://gist.github.com/goodreds/5b8a4a2bf11ff67557d38c5e727ea86c  -->
+
+<h1 class="profile-heading text-center bottom-6">Set up Your profile</h1>
+<div class="edit-content">
+  <div class="mx-auto w-32 h-32 relative mt-5 mb-8 ">
+
+
+    <!-- <i class="bi bi-person-fill"></i> -->
+
+    <img
+      [src]="selectedImage || ['./default-img-2.png']"
+      class="profile-picture  object-cover mt-3 object-center w-32 h-32"
+    />
+
+    <div class="profile-picture-icon-container w-20 h-20">
+      <input
+        type="file"
+        accept="image/*"
+        id="fileInput"
+        class="hidden"
+        (change)="onFileSelected($event)"
+      />
+      <button (click)="triggerFileInput()">
+        <i
+          class="profile-picture-icon bi bi-camera flex align-center mb-5 text-3xl"
+        ></i>
+      </button>
+    </div>
+  </div>
+
+  <form
+    [formGroup]="profileForm"
+    (ngSubmit)="saveProfile()"
+    class="form-container max-w-lg mx-auto bg-white mt-4 p-4 rounded-2xl shadow-lg space-y-6"
+  >
+    <!-- Name and surname -->
+    <div>
+      <label for="name" class="block font-medium text-gray-700 text-sm mb-1"
+        >Name & Surname</label
+      >
+      <input
+        id="name"
+        formControlName="name"
+        placeholder="Sino Fipaza"
+        type="text"
+        class="input-form-label mt-1 p-2 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      />
+      <div
+        *ngIf="
+          profileForm.get('name')?.invalid && profileForm.get('name')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        <small *ngIf="profileForm.get('name')?.errors?.['required']"
+          >Name and surname is required.</small
+        >
+        <small *ngIf="profileForm.get('name')?.errors?.['minlength']">
+          Name must be at least 2 characters.
+        </small>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div>
+      <label for="bio" class="block font-medium text-gray-700 text-sm"
+        >Bio</label
+      >
+      <textarea
+        id="bio"
+        formControlName="bio"
+        placeholder="Mathematics enthusiast 🤓 too nerdy for you."
+        rows="3"
+        class="input-form-label mt-1 p-3 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      ></textarea>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block ont-medium text-gray-700 text-sm"
+        >Email</label
+      >
+      <input
+        id="email"
+        formControlName="email"
+        placeholder="sino@gmail.com"
+        type="email"
+        class="input-form-label mt-1 p-2 w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+      />
+      <div
+        *ngIf="
+          profileForm.get('email')?.invalid && profileForm.get('email')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        <small *ngIf="profileForm.get('email')?.errors?.['required']"
+          >Email is required.</small
+        >
+        <small *ngIf="profileForm.get('email')?.errors?.['email']"
+          >Invalid email address.</small
+        >
+      </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+      <label
+        for="phoneNumber"
+        class="block font-medium text-gray-700 p-2 text-sm"
+        >Phone Number</label
+      >
+      <input
+        id="phoneNumber"
+        formControlName="phoneNumber"
+        placeholder="0722348899"
+        type="tel"
+        class="input-form-label mt-1 w-full rounded-lg border-gray-300 shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+      <div
+        *ngIf="
+          profileForm.get('phoneNumber')?.invalid &&
+          profileForm.get('phoneNumber')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        <small>Phone number must be 10 digits.</small>
+      </div>
+    </div>
+
+    <!-- Grade -->
+    <div>
+      <label for="grade" class="block font-medium text-sm text-gray-700"
+        >Grade</label
+      >
+      <select
+        id="grade"
+        formControlName="grade"
+        class="input-form-label mt-2 p-2 w-full rounded-lg border-gray-300 shadow-sm"
+      >
+        <option value="" disabled>Select your grade</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <div
+        *ngIf="
+          profileForm.get('grade')?.invalid && profileForm.get('grade')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        <small>Grade is required.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        (click)="saveProfile()"
+        [disabled]="profileForm.invalid"
+        class="submit-btn px-6 py-2 mb-5 rounded-lg shadow-sm focus:ring-2 focus:outline-none disabled:bg-gray-300 disabled:cursor-not-allowed"
+      >
+        Save
+      </button>
+
+      <div
+        *ngIf="isToastMessageVisible"
+        class="overlay fixed inset-0 bg-gray-500 bg-opacity-50 z-40"
+      ></div>
+
+      <div
+        *ngIf="isToastMessageVisible"
+        class="toast-message fixed items-center top-5 bg-[#00967D] text-white py-2 px-4 rounded shadow-lg z-40 transition-opacity duration-300"
+      >
+        Profile updated successfully!
+      </div>
+    </div>
+  </form>
+</div>

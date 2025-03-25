@@ -1,0 +1,69 @@
+<div class="report-container cursor-pointer" (click)="openReportPopUp()">
+  <img class="w-4 h-4" src="report.svg" alt="Report" />
+</div>
+
+<div
+  *ngIf="isReportFormVisible"
+  class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+>
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full mt-2 m-5">
+    <h2 class="text-lg font-semibold mb-4">
+      Report {{ contentType | titlecase }}
+    </h2>
+
+    <!-- <form (ngSubmit)="submitReport()"> -->
+
+    <form>
+      <label for="reason" class="block text-sm font-medium text-gray-700"
+        >Reason for Reporting:</label
+      >
+      <select
+        id="reason"
+        name="reason"
+        [(ngModel)]="selectedReason"
+        class="select-reason w-full mt-2 p-2 border rounded-lg"
+        (change)="onReasonChange($event)"
+      >
+        <option value="">Select your reason</option>
+        <option value="Inappropriate Content">Inappropriate Content</option>
+        <option value="Spam">Spam</option>
+        <option value="Offensive Language">Offensive Language</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="details" class="block text-sm font-medium text-gray-700 mt-4"
+        >Additional Details:</label
+      >
+      <textarea
+        id="details"
+        name="details"
+        rows="4"
+        [(ngModel)]="additionalDetails"
+        class="additional-details-textbox w-full mt-2 p-2 border rounded-lg"
+      ></textarea>
+
+      <div class="mt-4 flex justify-end gap-2">
+        <button
+          type="button"
+          (click)="close()"
+          class="cancel-report-btn px-4 py-2 bg-gray-300 text-gray-700 rounded-lg"
+        >
+          Cancel
+        </button>
+        <button type="submit" class="submit-report-btn px-4 py-2 rounded-lg">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Message -->
+<div
+  *ngIf="isToastMessageVisible"
+  class="overlay bg-opacity-50 bg-gray-300 fixed inset-0 flex items-center justify-center z-40"
+>
+  <div class="bg-[#00967d] text-white m-4 px-6 py-3 rounded-lg shadow-md">
+    {{ toastMessage }}
+  </div>
+</div>

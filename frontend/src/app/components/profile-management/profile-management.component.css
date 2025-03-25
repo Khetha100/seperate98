@@ -1,0 +1,90 @@
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.profile-heading {
+    margin-top: 12px;
+    padding: 8px;
+    color: rgb(71, 71, 71);
+    font-size: 24px;
+    
+  
+}
+/* .navbar-container { */
+    /* display: flex; 
+    top: -2px;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: white; 
+    z-index: 1000; 
+    padding: 0.5rem;  */
+    /* height: 90px; */
+    /* border-bottom: 1px solid #ccc;  */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+   /* } */
+  
+.profile-picture {
+    border-radius: 50%;
+    border: 1px solid rgb(228, 223, 223);
+    /* background:rgb(130, 130, 127); */
+}
+
+.profile-picture-icon-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 2px;
+  color: white !important;
+
+
+}
+
+profile-picture-icon {
+  font-size: 40px;
+}
+
+form {
+    width: 350px;
+  }
+
+  .input-form-label {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem; 
+    border: 1px solid #d1d5db;
+    /* box-shadow: 0 1px 2px  rgba(74, 250, 209, 0.5); */
+    outline: none; 
+  }
+  
+  .input-form-label:focus {
+    border-color: #00967D; 
+    /* box-shadow: 0 0 0 3px rgba(74, 250, 209, 0.5); */
+  }
+  
+
+.submit-btn {
+    background-color:  #00967D;
+    color: white;
+    width: 328px;
+}
+
+.submit-btn:hover {
+    background-color:  white;
+    border: #00967D 1px solid;
+    color: #00967D ;
+    width: 328px;
+    
+}
+
+.toast-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00967D;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}

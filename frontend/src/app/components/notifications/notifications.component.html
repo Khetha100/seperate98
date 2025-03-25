@@ -1,0 +1,28 @@
+<app-inside-nav></app-inside-nav>
+<div class="bg-white px-4 py-6 mt-[60px]">
+  <div class="flex flex-col items-center justify-center h-full">
+    <div class="relative w-72 h-72 mb-8">
+      <div
+        class="absolute inset-0 bg-[rgba(0,200,166,0.07)] rounded-full"
+      ></div>
+      <img
+        class="absolute inset-0 m-auto w-36 h-36"
+        src="notification0.svg"
+        alt="Notification icon"
+      />
+    </div>
+    <h2 class="text-2xl font-medium text-center mb-4">Nothing here... Yet</h2>
+    <p class="text-sm text-center max-w-sm">
+      It looks like you are up to speed. As you continue your learning journey,
+      we'll keep you updated with comments from your community and what your
+      peers are saying right here.
+    </p>
+  </div>
+</div>
+
+<div *ngFor="let notification of notifications">
+  <p>{{ notification.message }}</p>
+  <button (click)="markAsRead(notification.id)">Mark as Read</button>
+</div>
+
+<app-navbar></app-navbar>

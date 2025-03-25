@@ -1,0 +1,49 @@
+
+.container {
+    background: #e9ebf8;
+    height: 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    position: fixed; 
+    bottom: 0;
+  }
+
+  .home,  .add, .notification, .communities {
+    width: 25px;
+    height: 25px;
+  }
+  /* .closeIcon {
+    width: 18px;
+    height: 18px;
+  } */
+  input {
+    outline: none;
+  }
+  .add {
+    height: 35px;
+    width: 35px;
+  }
+  .cameraIcon {
+    position: relative;
+    top: 73px;
+    left: 173px;
+    opacity: 0.6;
+    width: 20px;
+    height: 20px;
+  }
+  .fileIcon {
+    position: relative;
+    top: -1px;
+    left: 108px;
+    opacity: 0.6;
+    width: 18px;
+    height: 19px;
+  }
+  .image-preview {
+    margin-top: 10px;
+    width:auto;
+    height: 55px;
+    border-radius: 5px;
+  }

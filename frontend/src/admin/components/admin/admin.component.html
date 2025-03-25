@@ -1,0 +1,72 @@
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="flex-1 ml-[330px] mt-[20px] p-6">
+    <div class="text-black font-extrabold text-5xl mb-10">Dashboard</div>
+
+    <!-- Dashboard Cards Container -->
+    <div class="grid grid-cols-3 gap-6">
+      <!-- Total Users -->
+      <div
+        class="flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md w-[294px] h-[170px]"
+      >
+        <div class="text-black text-2xl font-semibold text-center">
+          Total Users
+        </div>
+        <div class="text-black text-4xl font-bold text-center">
+          {{ this.adminService.dashboardData.totalUsers.length }}
+        </div>
+      </div>
+
+      <!-- Reported Content -->
+      <div
+        class="flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md w-[298px] h-[170px]"
+      >
+        <div class="text-black text-2xl font-semibold text-center">
+          Reported Content
+        </div>
+        <div class="text-black text-4xl font-bold text-center">
+          {{ this.adminService.dashboardData.reportedContent }}
+        </div>
+      </div>
+
+      <!-- Active Study Groups -->
+      <div
+        class="flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md w-[298px] h-[170px]"
+      >
+        <div class="text-black text-2xl font-semibold text-center">
+          Active Communities
+        </div>
+        <div class="text-black text-4xl font-bold text-center">
+          {{ this.adminService.dashboardData.totalCommunities.length }}
+        </div>
+      </div>
+
+      <!-- Resources Shared -->
+      <!-- <div
+        class="flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md w-[294px] h-[170px]"
+      >
+        <div class="text-black text-2xl font-semibold text-center">
+          Resources Shared
+        </div>
+        <div class="text-black text-4xl font-bold text-center">
+          {{ dashboardData?.resourcesShared }}
+        </div>
+      </div> -->
+
+      <!-- Donations in Rands -->
+      <div
+        class="flex flex-col items-center justify-center bg-white border border-gray-300 rounded-xl shadow-md w-[298px] h-[170px]"
+      >
+        <div class="text-black text-2xl font-semibold text-center">
+          Total Donations in Rands
+        </div>
+        <div class="text-black text-4xl font-bold text-center">
+          R {{ this.adminService.sumTotalDonations() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

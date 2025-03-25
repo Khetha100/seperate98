@@ -1,0 +1,140 @@
+/* Initially, the textarea is positioned normally */
+/* .text-area-messages {
+  transition: margin-bottom 0.3s ease, margin-top 0.3s ease;
+  position: relative;
+  z-index: 1;
+} */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-bottom: 70px;
+}
+
+.message {
+  max-width: 75%;
+  min-width: 75%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  margin: 6px;
+}
+
+/* Received messages (Left) */
+.received {
+  background-color: #f3f3f3;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  margin-left: 10px;
+}
+
+.trashReceived {
+  position:absolute;
+  left: 355px;
+
+}
+
+/* Sent messages (Right) */
+.sent {
+  background-color: #00967d;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  margin-left: auto;
+}
+
+
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #00967d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  width: auto; /* Allow it to expand naturally */
+  max-width: 75vw; /* Prevent it from exceeding screen width */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+
+.child {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 250px; /* Ensure it never exceeds parent width */
+  justify-content: flex-end;
+}
+
+.trash {
+  /* align-self: flex-end; */
+  /* margin-top: 10px; */
+  position: absolute;
+  left: 355px;
+  /* cursor: pointer */
+}
+
+
+/* When emoji picker is visible, push textarea upwards */
+/* .show-emoji-picker .text-area-messages {
+  margin-bottom: 200px;
+} */
+.textareaClass::placeholder{
+  color: #999;
+}
+
+.text-area-messages {
+  width: 100%;
+  min-height: 30px;
+  max-height: 300px; 
+  overflow: hidden; 
+  resize: none;
+}
+
+
+/* Emoji picker container is fixed at the bottom */
+.emoji-mart-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  max-width: 330px;
+}
+
+/* Centering the emoji picker */
+.emoji-mart {
+  width: 100%; /* Full width of the screen */
+  max-width: 390px; /* Maximum width, adjust as needed */
+
+}
+.emojis-icon {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: -10px;
+  top: 5px;
+}
+.send {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: -20px;
+}
+/* Ensuring other content below doesn't overlap with the emoji picker */
+body {
+  padding-bottom: 300px;
+}

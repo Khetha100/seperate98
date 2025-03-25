@@ -1,0 +1,82 @@
+/* Main background */
+.communities {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  overflow-y: auto;
+}
+
+/* Container for community options */
+.community-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 90%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+/* White cards */
+.community-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text inside the cards */
+.create-a-community,
+.join-a-community {
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 2.5vh;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Images inside the cards */
+.lettering,
+.avatar-of-female-student-with-notebooks {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* OR text */
+.or {
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Buttons */
+.frame-39474,
+.frame-39475 {
+  background: #00967d;
+  border-radius: 10px;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.go-to-community-creation-form,
+.go-to-all-communities {
+  color: white;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+}

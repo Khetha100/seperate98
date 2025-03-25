@@ -1,0 +1,97 @@
+<app-inside-nav></app-inside-nav>
+<div class="communities-home bg-white relative p-4">
+  <div class="mt-[60px]">
+    <!-- Search -->
+
+    <form [formGroup]="searchCommunityForm">
+      <div
+        class="search flex items-center bg-gray-200 rounded-lg px-4 py-3 mx-auto relative focus-within:outline focus-within:outline-[#00967d] focus-within:ring-2 focus-within:ring-[#00967d]"
+      >
+        <img
+          (click)="searchCommunityFunct()"
+          src="search0.svg"
+          class="w-6 h-6 absolute right-4"
+        />
+        <input
+          formControlName="searchedCommunity"
+          type="text"
+          placeholder="Search"
+          class="bg-transparent outline-none w-full"
+        />
+      </div>
+    </form>
+
+    <div class="mt-6 space-y-4">
+      @for(item of this.communityService.yourCommunities(); track $index) {
+      <div
+        class="bg-white border border-gray-400 rounded-lg p-4 mx-auto flex flex-col"
+      >
+        <div class="flex items-center">
+          <img [src]="item.communityPicture" class="w-12 h-12 rounded-full" />
+          <div class="ml-4">
+            <h3 class="font-medium">{{ item.name }}</h3>
+            <p class="text-xs text-gray-600">{{ item.description }}</p>
+            <p class="text-xs text-gray-500">
+              {{ item.communityMembersNumber }} members
+            </p>
+          </div>
+          @if(this.communityService.isAdmin(item.id)) {
+          <i
+            class="fas fa-trash text-red-600 cursor-pointer mb-10 ml-[180px]"
+            (click)="this.communityService.deleteCommunityService(item.id)"
+            title="Delete Community "
+          ></i>
+          } @else {
+          <app-report-modal class="mb-10 ml-[180px]"></app-report-modal>
+          }
+        </div>
+
+        <!-- Buttons Container -->
+        <div class="self-end mt-2 flex items-center gap-x-4">
+          <a
+            class="bg-[#00967d] text-white px-4 py-2 rounded-lg text-sm"
+            routerLink="/communityDiscussions"
+            (click)="onClick(item.id)"
+          >
+            Joined
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="mt-6 space-y-4">
+      @for(item of this.communityService.publicCommunitiesToJoin(); track $index)
+      {
+      <div class="bg-white border border-[#00967d] rounded-lg p-4 mx-auto">
+        <div class="flex items-center">
+          <img [src]="item.communityPicture" class="w-12 h-12 rounded-full" />
+          <div class="ml-4">
+            <h3 class="font-medium">{{ item.name }}</h3>
+            <p class="text-xs text-gray-600">{{ item.description }}</p>
+            <p class="text-xs text-gray-500">
+              {{ item.communityMembersNumber }} members
+            </p>
+          </div>
+        </div>
+        <div class="self-end mt-2">
+          <a
+            class="bg-[#00967d] text-white px-4 py-2 rounded-lg text-sm"
+            (click)="addCommunityMember(item.id)"
+          >
+            Join
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+
+    <a
+      routerLink="/community"
+      class="fixed bottom-4 right-4 bg-teal-600 text-white p-4 mb-[60px] rounded-full shadow-lg"
+    >
+      <i class="fas fa-plus"></i>
+    </a>
+  </div>
+</div>
+<app-navbar></app-navbar>

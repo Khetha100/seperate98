@@ -1,0 +1,8 @@
+.button {
+    background-color: #00967d;
+}
+
+.donation-input:focus {
+    border: 1px solid #00967d;
+    outline: none;
+}

@@ -1,0 +1,30 @@
+h3 {
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 32px;
+  line-height: 28px;
+  font-weight: 600;
+}
+p {
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 19px;
+  line-height: 28px;
+  font-weight: 400;
+}
+h4{
+    font-family: "Poppins-SemiBold", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.image-17 {
+    display: block;
+    margin: 20px auto;
+    width: 75%;
+}
+.icons {
+  width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 80px;
+    object-fit: cover;
+}

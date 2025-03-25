@@ -1,0 +1,385 @@
+.studentstoconnect {
+  background: #ffffff;
+  height: 852px;
+  position: relative;
+  overflow: hidden;
+}
+
+.searchInput {
+  background: #f1f1f1;
+  border-radius: 15px;
+  width: 95%;
+  height: 55px;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  overflow: hidden;
+  border: none;
+}
+
+.search {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 330px;
+  top: 85px;
+  overflow: visible;
+}
+
+.searchInput::placeholder {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  position: absolute;
+  left: 14px;
+  top: 17px;
+  width: 56px;
+  height: 24px;
+}
+
+.frame-39402 {
+  background: #146356;
+  border-radius: 15px;
+  width: 95%;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 145px;
+  overflow: hidden;
+}
+
+.rectangle-18006 {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+.discussions {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    left: 44px;
+    top: 7px;
+  }
+  .students {
+    color: white;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    right: 52px;
+    top: 7px;
+  }
+.discussions-to-be-apart-of {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: 13px;
+  top: 314px;
+}
+.communityDiscussions {
+  display: block;
+  position: absolute;
+
+  top: 360px;
+  align-items: center;
+  left: 12px;
+  justify-content: space-between;
+  /* background: #f1f1f1;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #146356;
+  border-width: 1px;
+  width: 361px;
+  height: 100px;
+  position: absolute;
+  left: 12px;
+  top: 349px; */
+  /* width: fit-content; */
+}
+
+.frame-39406{
+  background: #f1f1f1;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #146356;
+  border-width: 1px;
+  height: 100px;
+  width: 361px;
+}
+.nelson-mandela-s-inauguration {
+  padding: 5px;
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  /* position: absolute; */
+  left: 18px;
+  /* top: 7px; */
+}
+
+.initiatedDiscussion {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  /* position: absolute; */
+  left: 9px;
+  padding-left: 8px;
+  padding-right: 8px;
+  /* top: 40px; */
+  /* width: 331px;*/
+  /* overflow:scroll; */
+  word-wrap: break-word;
+
+}
+.join-discussion {
+  color: #146356;
+  text-align: right;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  text-decoration: underline;
+  /* position: absolute; */
+  left: 274px;
+  /* top: 78px; */
+}
+.line-14 {
+  /* margin-top: -1px; */
+  bottom: 38px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px 0 0 0;
+  width: 361px;
+  /* height: 0; */
+  position:sticky;
+  /*left: 0px;*/
+  /* top: 90px; */
+  /* transform-origin: 0 0; */
+  /* transform: rotate(-0.041deg) scale(1, 1); */
+  /* overflow:visible; */
+}
+.frame-394062 {
+  background: #f1f1f1;
+  width: 361px;
+  height: 55px;
+  position: absolute;
+  left: 16px;
+  top: 75px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.search {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 330px;
+  top: 87px;
+  overflow: visible;
+}
+.frame-394062::placeholder {
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 17px;
+}
+.menu {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 323px;
+  top: 60px;
+  overflow: visible;
+}
+.frame-39465 {
+  background: #f1f1f1;
+  border-radius: 20px;
+  width: 361px;
+  height: 100px;
+  position: absolute;
+  left: 12px;
+  top: 200px;
+  overflow: hidden;
+}
+.start-a-discussion {
+  color: #4b4b4b;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 23px;
+  top: 30px;
+  background:none;
+}
+
+.discussion-title{
+color: #4b4b4b;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 23px;
+  top: 15px;
+  background:none;
+}
+.discussion-title::placeholder {
+
+}
+.frame-394652 {
+  border-radius: 10px;
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  left: 260px;
+  top: 57px;
+}
+.rectangle-18056 {
+  background: #00967d;
+  border-radius: 15px;
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.discuss {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+  top: 50%;
+}
+.image-add {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 23px;
+  top: 65px;
+}
+.image-add2 {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  right: 12.5%;
+  left: 12.5%;
+  bottom: 12.5%;
+  top: 12.5%;
+  overflow: visible;
+}
+.file-add {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 49px;
+  top: 65px;
+}
+.file-add2 {
+  width: 66.67%;
+  height: 83.33%;
+  position: absolute;
+  right: 16.67%;
+  left: 16.67%;
+  bottom: 8.33%;
+  top: 8.33%;
+  overflow: visible;
+}
+.frame-39466 {
+  background: #e9ebf8;
+  border-radius: 2px;
+  padding: 19px 17px 19px 17px;
+  width: 392px;
+  height: 78px;
+  position: sticky;
+  left: 50%;
+  translate: -50%;
+  bottom: 0px;
+  overflow: hidden;
+}
+.frame-39477 {
+  display: flex;
+  flex-direction: row;
+  gap: 42px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 138px;
+  top: 23px;
+}
+.add {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.notification {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 222px;
+  top: 22px;
+  overflow: visible;
+}
+.ellipse-1099 {
+  width: 12px;
+  height: 10px;
+  position: absolute;
+  left: 235px;
+  top: 22px;
+  overflow: visible;
+}
+._3 {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Bold", sans-serif;
+  font-size: 6px;
+  font-weight: 700;
+  position: absolute;
+  left: 239px;
+  top: 22px;
+  width: 3px;
+  height: 8px;
+}
+.group {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 302px;
+  top: 20px;
+  overflow: visible;
+}
+.home {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 58px;
+  top: 20px;
+  overflow: visible;
+}
+.discussForm:focus {
+ border-color: #00967d;
+ outline: none;
+}

@@ -1,0 +1,63 @@
+<div class="container">
+  <div routerLink="/home">
+    <img class="home" src="icons/home0.svg" /></div>
+
+  <div routerLink="/notifications">
+    <img class="notification" src="icons/notification0.svg" />
+  </div>
+
+  <div (click)="togglePopup()"><img class="add" src="icons/add0.svg" /></div>
+
+  <div routerLink="/community">
+    <img class="communities" src="icons/group0.svg" />
+  </div>
+  <div routerLink="/profile">
+    <img class="ownProfile" src="icons/user.svg" />
+  </div>
+</div>
+
+<div
+  *ngIf="isPopupVisible"
+  class="fixed inset-0 bg-gray-100 bg-opacity-50 flex justify-center items-center">
+<div
+class="fixed inset-0 bg-black opacity-50"
+(click)="closePopup()"
+></div>
+  <!-- <div
+    class="text-[#000000] text-left font-['Poppins-semi-bold',_sans-serif] text-s font-medium absolute left-[19px] top-[26px]"
+  > -->
+ <div
+    class="relative bg-white w-[314px] h-[159px] rounded-xl border border-gray-200 p-4 z-50"
+  >
+    What’s buzzing?
+    <form [formGroup]="postForm">
+    
+  <textarea class="text-[#606060] w-[275px] text-left font-['Poppins-Regular',_sans-serif] text-sm font-normal absolute left-5 top-[65px]" [(ngModel)]="postContent" formControlName="postContent" placeholder="Educate others here..."> </textarea>
+  <!-- <input hidden (change)="onFileChange($event)"  #fileInput accept="image/*" type="file" id="file"> -->
+  <label class="imageInput" for="file"><img class="iconcamera" src="icons/camera0.svg" /></label>
+    </form>
+
+  <!-- <img
+    class="w-[20px] h-[20px] absolute left-[195px] top-[115px] overflow-visible"
+    src="icons/camera0.svg"
+  /> -->
+  <!-- <div class="w-5 h-5 absolute left-14 top-[115px]">
+    <img
+      class="w-[20px] h-[20px] absolute right-[16.67%] left-[16.67%] bottom-[8.33%] top-[8.33%] overflow-visible"
+      src="icons/file-add0.svg"
+    />
+  </div> -->
+  <div routerLink="/home" class="rounded-[10px] w-20 h-[35px] absolute left-[221px] top-[107px]">
+    <div
+      class="bg-[#00967d] rounded-[15px] w-20 h-[35px] absolute left-0 top-0"
+    ></div>
+    <button
+      (click)="submit()"
+      class="text-[#ffffff] text-left font-['Poppins-SemiBold',_sans-serif] text-sm font-semibold absolute left-[50%] top-[50%]"
+      style="translate: -50% -50%"
+    >
+      Share
+    </button>
+  </div>
+</div>
+</div>

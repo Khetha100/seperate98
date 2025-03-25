@@ -1,0 +1,16 @@
+I0301 09:34:11.668093 2600391 load.go:37] Reloading schema and connectors...
+I0301 09:34:11.700016 2600391 control.go:59] [/emulator/backend 04e4] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 
+I0301 09:34:11.717856 2600391 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector"
+I0301 09:34:11.720533 2600391 collector.go:107] schema extensions wrote into "/home/khetha/newRepo/EduMingle/frontend/dataconnect/.dataconnect/schema"
+Generated sources: prelude.gql [65582B] 
+I0301 09:34:11.722270 2600391 collector.go:107] connector "default" javascriptSdk wrote into "/home/khetha/newRepo/EduMingle/frontend/dataconnect-generated/js/default-connector"
+Generated sources: esm/package.json [17B] README.md [2740B] react/index.d.ts [0B] react/index.cjs.js [0B] react/esm/index.esm.js [0B] esm/index.esm.js [110B] index.cjs.js [146B] package.json [895B] react/package.json [468B] react/esm/package.json [17B] index.d.ts [246B] 
+I0301 09:34:11.725465 2600391 installsdk.go:48] Package @firebasegen/default-connector is already installed. Skipping installation
+I0301 09:34:11.725498 2600391 load.go:115] Finished reloading
+I0301 09:34:11.725684 2600391 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0301 09:34:11.725738 2600391 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
+I0301 09:34:14.895107 2600391 control.go:59] [/emulator/backend fbb3] UpdateResources(): done
+Schema: sources: schema/schema.gql [2088B] 
+Connector "default": sources: connector/mutations.gql [1233B] connector/queries.gql [1802B] 

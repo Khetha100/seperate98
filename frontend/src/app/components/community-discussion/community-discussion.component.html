@@ -1,0 +1,105 @@
+<div style="overscroll-behavior: none">
+  <div
+    class="fixed w-full bg-[#00967d] h-16 pt-2 text-white flex justify-between shadow-md"
+    style="top: 0px; overscroll-behavior: none"
+  >
+    <a routerLink="/communityDiscussions" class="arrow-left">
+      <img class="arrow-left2 my-1" src="arrow-left2.svg" />
+    </a>
+
+    <div class="my-2 mx-4 text-100 font-bold text-lg">
+      {{this.discussionForm.value.title}}
+    </div>
+  </div>
+
+  <div class="chat-container mt-20 mb-16">
+    <ul>
+      <li *ngFor="let item of messages">
+        @if (item.senderId != this.loggedInUser) {
+        <!-- Received Message -->
+        <div class="clearfix ">
+          <div class="message received">
+            <p class="child">{{ item.content }}</p>
+            <!-- <img (click)="deleteMessageClicked(item.id)" class="trashReceived" src="icons/trash.svg" /> -->
+          </div>
+        </div>
+      } @else {
+        <!-- Sent Message -->
+        <div class="clearfix">
+          <div class="message sent">
+            <p class="child">{{ item.content }}</p>
+            <!-- <img (click)="deleteMessageClicked(item.id)" class="trash" src="icons/trash.svg" /> -->
+          </div>
+        </div>
+      }
+
+        <!-- } -->
+      </li>
+    </ul>
+  </div>
+
+
+
+  <form [formGroup]="form">
+    <div
+      class="fixed p-1 text-black border-gray-200 flex items-center w-full"
+      style="bottom: 0px"
+    >
+
+<!-- Textarea -->
+<textarea
+
+  class="text-area-messages border-2 border-gray-200 resize-none p-3 m-5 relative p-5 w-60 rounded-3xl"
+  formControlName="name"
+  (blur)="emojiService.onBlur()"
+  (focus)="emojiService.onFocus()"
+  (input)="autoGrowTextArea($event)"
+  name="message"
+  [(ngModel)]="emojiService.message"
+  rows="1"
+  placeholder="Message..."
+  style="outline: none"
+>
+<button type="button">
+<!-- <input hidden class="imageInput" (change)="onFileChange($event)" #fileInput accept="image/*" type="file" id="file"> -->
+<!-- <label class="imageInput" for="file"></label> -->
+<img class="" src="icons/image-add1.svg" />
+</button>
+</textarea>
+
+<!-- Emoji Button and Emoji Picker -->
+ <div class="flex">
+<div class="emoji-container ">
+  <button (click)="this.emojiService.toggleEmojiPicker()" class="emojis-icon"><img src="happy.png"/></button><br>
+  <div class="emoji-mart-container" (click)="emojiService.stopPropagation($event)">
+    <emoji-mart
+      *ngIf="emojiService.showEmojiPicker"
+      class="emoji-mart"
+      (emojiSelect)="emojiService.addEmoji($event)"
+      title="Pick your emoji…"
+    ></emoji-mart>
+  </div>
+</div>
+
+
+      <button class="send-btn ml-6" style="outline: none" (click)="click()">
+        <svg
+          class="send svg-inline--fa text-green-400 fa-paper-plane"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="paper-plane"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="currentColor"
+            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+          />
+        </svg>
+      </button>
+      </div>
+    </div>
+  </form>
+</div>

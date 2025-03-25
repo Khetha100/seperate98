@@ -1,0 +1,297 @@
+# Global Variables
+@baseUrl = http://localhost:8080/api/v1
+@adminUrl = http://localhost:8080/api/admin
+@postId = 4
+@userId = 1
+@communityId = 2
+@discussionId = 1
+@commentId = 2
+@profileId = 1
+@searchValue = new
+@followerId = 1
+@followedId = 2
+@connectionId = 2
+@communityName = "Math Merchants"
+
+# AUTH CONTROLLER ENDPOINTS
+
+### Registers a new teacher
+POST {{baseUrl}}/auth/signup
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "Denzel",
+  "lastName": "Curry",
+  "phone": "6666666666",
+  "saceNumber": "6755",
+  "password": "666666",
+  "role": "TEACHER"
+}
+
+### Registers a new student
+POST {{baseUrl}}/auth/signup
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "Maboku",
+  "lastName": "Surname",
+  "phone": "1111111111",
+  "password": "123456",
+  "role": "STUDENT"
+}
+
+### Logs in a user
+POST {{baseUrl}}/auth/signin
+Content-Type: application/json
+Accept: application/json
+
+{
+  "phone": "6666666666",
+  "password": "666666"
+}
+
+### Logs out a user
+GET {{baseUrl}}/auth/signout
+Accept: application/json
+
+# GRADES AND SUBJECTS CONTROLLER ENDPOINTS
+
+### Fetch all grades
+GET {{baseUrl}}/grades
+Accept: application/json
+
+### Fetch a specific grade
+@gradeId = 2
+GET {{baseUrl}}/grades/{{gradeId}}
+Accept: application/json
+
+### Fetch subjects by grade
+GET {{baseUrl}}/subjects/{{gradeId}}
+Accept: application/json
+
+# POST CONTROLLER ENDPOINTS
+
+### Get all posts
+GET {{baseUrl}}/posts
+Accept: application/json
+
+### Create a new post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "imageUrl": "",
+  "name": "Maboku Seimela",
+  "description": "Today school was amazing and I learned about Mathematics.",
+  "numberOfLikes": 1000
+}
+
+### Delete a post
+DELETE {{baseUrl}}/posts/{{postId}}
+Accept: application/json
+
+### Search a post
+GET {{baseUrl}}/posts/search?keyword={{searchValue}}
+Accept: application/json
+
+### Like a post
+POST {{baseUrl}}/posts/{{postId}}/likes?userId={{userId}}
+Content-Type: application/json
+Accept: application/json
+
+### Unlike a post
+DELETE {{baseUrl}}/posts/{{postId}}/likes?userId={{userId}}
+Accept: application/json
+
+# COMMUNITIES CONTROLLER ENDPOINTS
+
+### Get all communities
+GET {{baseUrl}}/communities
+Accept: application/json
+
+### Create a new community
+POST {{baseUrl}}/communities
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Math Merchants",
+  "description": "This group is meant for the grade 4 learners that have a problem with multiplication",
+  "pubOrPriv": "public",
+  "subjectId": 101,
+  "communityPicture": "",
+  "communityMembersNumber": 344,
+  "joined": true
+}
+
+### Update community details
+PUT {{baseUrl}}/communities/community
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{communityId}},
+  "name": "Mathematics Merchants",
+  "description": "This group is meant for the new grade 5 learners that have a problem with multiplication and addition",
+  "pubOrPriv": "private",
+  "subjectId": 102,
+  "communityPicture": "",
+  "communityMembersNumber": 255,
+  "joined": false
+}
+
+### Get a specific community
+GET {{baseUrl}}/communities/{{communityId}}
+Accept: application/json
+
+### Get community members
+GET {{baseUrl}}/communities/members/{{communityId}}
+Accept: application/json
+
+### Add a community member
+POST {{baseUrl}}/communities/members
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{userId}},
+  "name": "Maboku",
+  "surname": "Seimela",
+  "bio": "A++ student with his head on his shoulders",
+  "img_url": "",
+  "phone": "0681481174",
+  "password": "123456"
+}
+
+### Delete a community member
+DELETE {{baseUrl}}/communities/members/{{userId}}
+Accept: application/json
+
+### Search for a community
+GET {{baseUrl}}/communities/search?keyword={{communityName}}
+Accept: application/json
+
+# DISCUSSIONS CONTROLLER ENDPOINTS
+
+### Get all discussions
+GET {{baseUrl}}/discussions
+Accept: application/json
+
+### Get a specific discussion
+GET {{baseUrl}}/discussions/{{discussionId}}
+Accept: application/json
+
+### Create a new discussion
+POST {{baseUrl}}/discussions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Multiplications Discussion",
+  "description": "The multiplications table is giving the grade 4 learners a problem"
+}
+
+### Search discussions
+GET {{baseUrl}}/discussions/search
+Accept: application/json
+
+# COMMENTS CONTROLLER ENDPOINTS
+
+### Get all comments
+GET {{baseUrl}}/comments
+Accept: application/json
+
+### Create a comment
+POST {{baseUrl}}/comments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "imageUrl": "",
+  "name": "this is my comment",
+  "description": "this is my comments controller"
+}
+
+### Delete a comment
+DELETE {{baseUrl}}/comments/{{commentId}}
+Accept: application/json
+
+# PROFILE CONTROLLER ENDPOINTS
+
+### Update user profile
+PUT {{baseUrl}}/profile/{{profileId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Ntandoyenkosi",
+  "surname": "Magana",
+  "bio": "A++ student with her head on her shoulders",
+  "img_url": "",
+  "phone": "1174168068",
+  "password": "654321"
+}
+
+### Get a user's profile
+GET {{baseUrl}}/profiles/{{userId}}
+Accept: application/json
+
+### Get all user profiles
+GET {{baseUrl}}/profiles
+Accept: application/json
+
+### Get a user profile's posts
+GET {{baseUrl}}/profiles/{{userId}}/posts
+Accept: application/json
+
+# ADMIN CONTROLLER ENDPOINTS
+
+### Get reported content
+GET {{adminUrl}}/content/reported
+Accept: application/json
+
+### Get reported content count
+GET {{adminUrl}}/content/reported/count
+Accept: application/json
+
+### Get all donations
+GET {{adminUrl}}/donations
+Accept: application/json
+
+### Home Page
+GET {{baseUrl}}/home
+Accept: application/json
+
+### Follow someone
+POST {{baseUrl}}/follows/follow?followerId={{followerId}}&followedId={{followedId}}
+Accept: application/json
+
+### Unfollow someone
+DELETE {{baseUrl}}/follows/unfollow?followerId={{followerId}}&followedId={{followedId}}
+Accept: application/json
+
+### Get all followers
+GET {{baseUrl}}/follows/{{userId}}/followers
+Accept: application/json
+
+### Get all following
+GET {{baseUrl}}/follows/{{userId}}/followers
+Accept: application/json
+
+# NOTIFICATIONS CONTROLLER ENDPOINTS
+
+### Get all unread notifications
+GET {{baseUrl}}/notifications/{{userId}}
+Accept: application/json
+
+### Mark a notifications as read
+PATCH {{baseUrl}}/notifications/{{userId}}/read
+Content-Type: application/json
+Accept: application/json
+
+{
+  "readStatus": true
+}

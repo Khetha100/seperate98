@@ -1,0 +1,75 @@
+<div class="report-container cursor-pointer" (click)="openReportPopUp()">
+  <img class="w-4 h-4" src="report.svg" alt="Report" />
+</div>
+
+<div
+  *ngIf="isReportFormVisible"
+  class="report-pop-up fixed inset-0 bg-gray-100 bg-opacity-50 flex justify-center items-center z-50"
+>
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full mt-2 m-5">
+    <h2 class="text-lg font-semibold mb-4">Report Post</h2>
+    <form (ngSubmit)="reportPost(contentId)">
+      <label for="reason" class="block text-sm font-medium text-gray-700"
+        >Reason for Reporting:</label
+      >
+      <select
+        id="reason"
+        name="reason"
+        class="select-reason w-full mt-2 p-2 border rounded-lg"
+        (change)="onReasonChange($event)"
+      >
+        <option value="" selected disabled>Select your reason</option>
+
+        <option *ngFor="let reason of reportReason" [value]="reason.value">
+          {{ reason.label }}
+        </option>
+
+        <!-- <option value="" > Select your reason</option>
+        <option value="Inappropriate Content">Inappropriate Content</option>
+        <option value="Spam">Spam</option>
+        <option value="Offensive Language">Offensive Language</option>
+        <option value="Other">Other</option> -->
+      </select>
+
+      <label for="details" class="block text-sm font-medium text-gray-700 mt-4"
+        >Additional Details:</label
+      >
+      <textarea
+        id="details"
+        name="details"
+        rows="4"
+        class="additional-details-textbox w-full mt-2 p-2 border rounded-lg"
+        [(ngModel)]="selectedDescription"
+      ></textarea>
+
+      <div class="mt-4 flex justify-end gap-2">
+        <button
+          type="button"
+          (click)="isReportFormVisible = false"
+          class="cancel-report-btn px-4 py-2 bg-gray-300 text-gray-700 rounded-lg"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          (click)="reportPost(contentId)"
+          class="submit-report-btn px-4 py-2 rounded-lg"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div
+  *ngIf="isToastMessageVisible"
+  class="overlay fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
+></div>
+
+<div
+  *ngIf="isToastMessageVisible"
+  class="toast-message bg-opacity-50 items-center top-5 bg-[#00967D] w-80 z-50 absolute text-white px-5 py-2 mr-4 rounded-lg shadow-md"
+>
+  {{ toastMessage }}
+</div>

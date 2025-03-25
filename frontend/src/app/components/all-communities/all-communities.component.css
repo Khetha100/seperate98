@@ -1,0 +1,403 @@
+.search:focus {
+  outline-color: #00967d;
+  }
+  
+  
+  /* 
+  
+  .communities-home {
+    background: #ffffff;
+    position: relative;
+  }
+  
+  .communities {
+    color: #000000;
+    text-align: center;
+    justify-content: center;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+  }
+  
+  
+  
+  .frame-39452 {
+    background: #f1f1f1;
+    border-radius: 15px;
+    width: 85vw;
+    height: 55px;
+    position: absolute;
+    left: 8vw;
+    
+    overflow: hidden;
+  }
+  .search {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 70vw;
+    top: 14px;
+    overflow: visible;
+  }
+  .search2 {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    position: absolute;
+    left: 14px;
+    top: 17px;
+    width: 56px;
+    height: 24px;
+  }
+  .frame-39453 {
+    margin-top: 4px;
+    background: #ffffff;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #91b5af;
+    border-width: 1px;
+    width: 85vw;
+    height: 150px;
+    position: absolute;
+    left: 8vw;
+    top: 120px;
+    overflow: hidden;
+  }
+  .frame-39461 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 27px;
+    top: 26px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  .study-geeks {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    left: 95px;
+    top: 14px;
+  }
+  .this-community-is-free-for-all-to-join-feel-free-to-make-yourself-digitally-at-home {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    position: absolute;
+    left: 95px;
+    top: 56px;
+  }
+  ._265-members {
+    color: #6f6f70;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    left: 95px;
+    top: 33px;
+  }
+  .frame-39463 {
+    width: 60px;
+    height: 35px;
+    position: absolute;
+    left: 289px;
+    top: 105px;
+  }
+  .rectangle-18055 {
+    background: #00967d;
+    border-radius: 10px;
+    width: 60px;
+    height: 35px;
+    position: absolute;
+    right:6vw;
+  }
+  .join {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    position: absolute;
+    right: 7vw;
+   
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-39460 {
+    background: #ffffff;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #91b5af;
+    border-width: 1px;
+    width: 85vw;
+    height: 150px;
+    position: absolute;
+    left: 8vw;
+    top: 445px;
+    overflow: hidden;
+    margin-top: 5px;
+  }
+  .math-merchants {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    left: 95px;
+    top: 14px;
+    width: 132px;
+  }
+  .do-you-love-math-as-much-as-we-do {
+    color: #000000;
+    text-align: left;
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    position: absolute;
+    left: 95px;
+    top: 62px;
+  }
+  .frame-39462 {
+    width: 60px;
+    height: 35px;
+    position: absolute;
+    left: 287px;
+    top: 100px;
+  }
+  .join2 {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    right:6vw;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  ._123-members {
+    color: #6f6f70;
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    left: 95px;
+    top: 33px;
+  }
+  .frame-39459 {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80vw;
+    position: absolute;
+    left: 8vw;
+    top: 70px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  .frame-39454 {
+    background: #00967d;
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 78px;
+    height: 35px;
+    position: absolute;
+    overflow: hidden;
+  }
+  .math {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 26px;
+    top: 10px;
+  }
+  .frame-394592 {
+    background: rgba(96, 96, 96, 0.48);
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 78px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+  }
+  .english {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-394602 {
+    background: rgba(96, 96, 96, 0.48);
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 78px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+  }
+  .afrikaans {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-39455 {
+    background: rgba(96, 96, 96, 0.48);
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 78px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cat {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-39457 {
+    background: #8e98a8;
+    border-radius: 15px;
+    flex-shrink: 0;
+    width: 95px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+  }
+  .humanities {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-39458 {
+    background: #8e98a8;
+    border-radius: 15px;
+    flex-shrink: 0;
+    width: 116px;
+    height: 35px;
+    position: relative;
+    overflow: hidden;
+  }
+  .social-studies {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+    top: 50%;
+  }
+  .frame-39465 {
+    background: #e9ebf8;
+    border-radius: 2px;
+    padding: 19px 17px 19px 17px;
+    width: 392px;
+    height: 78px;
+    position: sticky;
+    left: 50%;
+    translate: -50%;
+    bottom: 3px;
+    overflow: hidden;
+  }
+  .frame-39477 {
+    display: flex;
+    flex-direction: row;
+    gap: 42px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 138px;
+    top: 23px;
+  }
+  .add {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: visible;
+  }
+  .notification {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 222px;
+    top: 22px;
+    overflow: visible;
+  }
+  .ellipse-1099 {
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    left: 235px;
+    top: 22px;
+    overflow: visible;
+  }
+  ._3 {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Poppins-Bold", sans-serif;
+    font-size: 6px;
+    font-weight: 700;
+    position: absolute;
+    left: 239px;
+    top: 22px;
+    width: 3px;
+    height: 8px;
+  }
+  .group {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 302px;
+    top: 20px;
+    overflow: visible;
+  }
+  .home {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 58px;
+    top: 20px;
+    overflow: visible;
+  } */

@@ -1,0 +1,52 @@
+.select-reason:focus,
+.additional-details-textbox:focus {
+    outline: 2px solid #00967d;
+    border-color: #00967d;
+}
+
+.submit-report-btn,
+.cancel-report-btn {
+    background-color: #00967d;
+    color: white;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cancel-report-btn {
+    background-color: #12594d;
+    border: 1px solid #12594d;
+}
+
+.cancel-report-btn:hover {
+    background-color: white;
+    color: #12594d;
+    border-color: #12594d;
+}
+
+.submit-report-btn:hover {
+    background-color: white;
+    color: #00967d;
+    border-color: #00967d;
+}
+
+/* Add styles for the toast message */
+.toast-message {
+    animation: fadeInOut 10s ease-in-out;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,26 @@
+<div>
+  <div style="border: 1px solid black; padding: 12px;" *ngFor="let task of messages">
+    <h3>{{task.content}}</h3>
+    <span>{{task.communityId}} CommunityId</span>
+  </div>
+</div>
+<div style="border: 1px solid black; padding: 12px;">
+  <form [formGroup]="form">
+    <label>Content</label>
+    <p>
+      <input formControlName="name" type="text"/>
+    </p>
+    <label>CommunityId</label>
+    <p>
+      <input formControlName="days" type="number"/>
+    </p>
+
+    <!-- <label>SenderId</label>
+    <p>
+      <input formControlName="senderId" type="number"/>
+    </p> -->
+    <p>
+      <button (click)="click()" >Add</button>
+    </p>
+  </form>
+</div>

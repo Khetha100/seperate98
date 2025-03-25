@@ -1,0 +1,50 @@
+<div class="search">
+  <div class="flex">
+    <form [formGroup]="searchForm">
+    <input
+      class="inputbox p-3"
+      formControlName="postContent"
+      placeholder="Search "
+    />
+    </form>
+    <div>
+      <img
+        (click)="searchFunct()"
+        class="searchIcon"
+        src="icons/searchIcon.svg"
+      />
+    </div>
+  </div>
+  <div class="arrow-left">
+    <img class="arrow-left2" (click)="goBack()" src="icons/backIcon.svg" />
+  </div>
+  @if(this.results.length > 0){
+    @for(item of this.results; track $index){
+      <div class="frame-39389">
+    <div class="post">
+      {{ item.description }}
+    </div>
+    <img *ngIf="item.imageUrl" class="image-18" [src]="item.imageUrl" />
+    <app-report-post class="more"></app-report-post>
+    <img class="image-21" src="images/image-210.png" />
+    <!-- <div class="_25-minutes-ago">{{getTimDiff(item.date)}}</div> -->
+    <img class="w-10 h-10 rounded-full ml-3 mt-3" routerLink="/profile" src="default-img-2.png" />
+    <div class="name" routerLink="/profile">{{item.name}}</div>
+    <!-- <div class="time">
+      <span>posted {{ getTimDiff(item.date) }} ago</span>
+    </div> -->
+  </div>
+    }
+  } @else{
+      <div>
+    <img
+      class="email-and-social-media-marketing-with-hashtag-sign"
+      src="{{ image }}"
+    />
+    <div class="errorMessage">{{ text }}</div>
+  </div>
+  }
+
+
+</div>
+<app-navbar></app-navbar>

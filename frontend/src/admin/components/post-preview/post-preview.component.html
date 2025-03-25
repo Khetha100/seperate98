@@ -1,0 +1,14 @@
+<div *ngIf="show" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-xl w-full">
+    <h3 class="text-xl font-semibold mb-4">{{ post?.userInfo?.firstName }}</h3>
+
+    <div class="post-description mb-4">
+      <p>{{ post?.description }}</p>
+      <img *ngIf="post?.imageUrl" class="w-full h-auto rounded-lg" [src]="post?.imageUrl" />
+    </div>
+
+    <div class="flex justify-between">
+      <button (click)="closeModal()" class="px-4 py-2 bg-gray-300 rounded-lg">Close</button>
+    </div>
+  </div>
+</div>

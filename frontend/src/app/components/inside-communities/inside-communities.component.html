@@ -1,0 +1,98 @@
+<app-inside-nav></app-inside-nav>
+<div class="communities-home">
+  <input class="searchInput" placeholder="Search" />
+  <img class="search" src="search0.svg" />
+
+  <div class="frame-39402">
+    <div class="rectangle-18007"></div>
+    <button class="discussions" routerLink="/communityDiscussions">
+      Discussions
+    </button>
+    <button class="students">Students</button>
+  </div>
+  <div class="frame-39451">
+    <div class="frame-39468">
+
+
+      @for(item of this.communityService.communityMembersList(); track $index){
+
+        <!-- @if(item.roles=='admin'){
+
+        } -->
+        <div class="frame-39403">
+          <!-- <img class="rectangle-18010" src="images/ArnoPic.png" /> -->
+          <img class="rectangle-18010 w-10 h-10 rounded-full ml-3 mt-3" routerLink="/profile"src="default-img-2.png" />
+          <!-- <div class="_25-connections">25 connections</div> -->
+          <div
+            class="coolest-kid-on-the-block-top-5-grade-12-mathematics-football-lover"
+          >
+            <!-- Coolest kid on the block. -->
+            <br />
+            <!-- Top 5 Grade 12 Mathematics. -->
+             <!-- {{item.}} -->
+            <br />
+          </div>
+          <div class="arno-greeff">{{item.firstName}}  {{item.lastName}}</div>
+          @if(item.id == this.loggedUserId && !isAdmin()){
+          <button class="visitbtn" routerLink="/profile">connect</button>
+          }
+          @if(item.id!=this.loggedUserId && isAdmin()){
+              <button class="connectBtn" (click)="removeCommunityMember(item.id)">Remove</button>
+          }
+        <hr /> 
+        </div>
+      }
+
+
+
+    </div>
+  </div>
+  <div >
+  <div class="students-to-connect-with">Community members</div>
+@if(isAdmin()){
+  <img  (click)="togglePopup()"class="addOrRemove" src="more.svg"/>
+}
+</div>
+</div>
+<app-navbar></app-navbar>
+
+<div>
+
+
+<div
+    *ngIf="isPopupVisible"
+    class="absolute top-[90px] right-0 w-60 bg-white shadow-lg rounded-lg p-4"
+  >
+    <div class="h-[80px] ">
+      <div class="bg-white w-full h-full absolute inset-0"></div>
+      <div (click)="openAddDialog()">
+      <div
+
+        class="text-black text-left font-medium text-xs absolute left-[60px] top-[17px]"
+      >
+        Add Member
+      </div>
+      <img
+        class="w-[30px] h-[30px] absolute left-5 top-[11px]"
+        style="object-fit: cover"
+        src="add.svg"
+      />
+      </div>
+
+      <div (click)="openRemoveDialog()" >
+      <img
+        class="w-[30px] h-[30px] absolute left-5 top-[71px]"
+        style="object-fit: cover"
+        src="clear.svg"
+      />
+      <div
+
+
+        class="text-black text-left font-medium text-xs absolute left-[60px] top-[80px]"
+      >
+        Remove Member
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="flex">
+  <app-sidebar></app-sidebar>
+  <div class="flex-1 ml-[316px] mt-6 p-6">
+    <div class="text-5xl font-extrabold mb-8 pl-2">Analytics</div>
+
+   <div class="grid grid-cols-3 gap-4 bg-white shadow-md rounded-lg p-6 mb-8">
+  <div class="text-center">
+    <div class="text-sm font-medium text-gray-600">Most Active Subject</div>
+    <div class="text-2xl font-bold text-green-600">
+      {{ analyticsData?.mostActiveSubject }}
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="text-sm font-medium text-gray-600">User Growth</div>
+    <div class="text-2xl font-bold text-blue-600">
+      {{ this.adminService.getTotalUsers() || 0 }}
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="text-sm font-medium text-gray-600">Community Growth</div>
+    <div class="text-2xl font-bold text-orange-600">
+      {{ this.adminService.getCommunityNumber() || 0 }}
+    </div>
+  </div>
+  <!-- <div class="text-center pb-4 pt-2">
+    <div class="text-sm font-medium text-gray-600">Resource Sharing Rate</div>
+    <div class="text-2xl font-bold text-purple-600">
+      {{ analyticsData?.resourceSharingRate }}
+    </div>
+  </div> -->
+</div>
+
+
+    <div class="bg-white shadow-md rounded-lg p-6 mt-8">
+      <div class="text-xl font-semibold mb-4">Donation Summary</div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="text-center">
+          <div class="text-sm font-medium text-gray-600">Total Donations</div>
+          <div class="text-2xl font-bold text-green-600" [id]="donationSummary">
+            R {{ this.adminService.sumTotalDonations() }}
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-sm font-medium text-gray-600">Top Donor</div>
+          <div class="text-xl font-bold text-blue-600">
+            {{ donationSummary?.topDonor?.fullName || "N/A" }}
+          </div>
+          <div class="text-lg font-semibold text-blue-600">
+            {{ formatAmount(donationSummary?.topDonor?.amount || 0) }}
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-sm font-medium text-gray-600">Total Donors</div>
+          <div class="text-2xl font-bold text-orange-600">
+            {{ this.adminService.getTotalDonors() || 0 }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

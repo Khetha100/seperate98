@@ -1,0 +1,235 @@
+<app-inside-nav></app-inside-nav>
+
+<div
+  class="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-3 bg-white shadow-xl rounded-lg text-gray-900"
+>
+  <div class="rounded-t-lg h-32 mt-20 overflow-hidden">
+    <!-- <img
+      class="header-img object-cover object-top w-full"
+      [src]=""
+
+      alt=" "
+    /> -->
+  </div>
+
+  <!-- profile picture -->
+  <div
+    class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden"
+  >
+    <img
+      class="profile-picture object-cover object-center h-32"
+      [src]="userProfileData?.imageUrl || 'default-img-2.png'"
+      alt=""
+    />
+  </div>
+
+  <div class="">
+    <div class="text-center flex justify-center gap-2 mt-2">
+      <h2 class="font-semibold">
+        {{ userProfileData?.firstName + " " + userProfileData?.lastName }}
+      </h2>
+      <img
+        class="add-user left-228 overflow-visible"
+        width="16"
+        height="16"
+        src="user-add0.svg"
+        alt="add-user"
+        (click)="openModal(receiverId, receiverName)"
+      />
+
+      <!-- (click)="openModal(receiverId)" -->
+      <!--  -->
+
+      <img
+        lass="share-profile left-228 overflow-visible"
+        width="13"
+        height="13"
+        src="share1.svg"
+        (click)="copyLinkToProfile()"
+      />
+      <!--  the bio -->
+    </div>
+    <div class="text-center text-slate-500">
+      {{ userProfileData?.bio }}
+    </div>
+  </div>
+
+  <!-- Add connection Modal -->
+  <div *ngIf="isModalVisible" class="modal-overlay">
+    <div class="modal-content">
+      <h3>
+        Add
+        {{ userProfileData?.firstName + " " + userProfileData?.lastName }} as a
+        connection?
+      </h3>
+      <div class="modal-actions gap-4 flex justify-center mt-[20px]">
+        <button class="modal-actions-btn" (click)="addConnection()">Yes</button>
+        <button class="modal-actions-btn" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="isToastVisible"
+    class="overlay fixed inset-0 bg-gray-300 bg-opacity-50 z-40"
+  ></div>
+
+  <!-- Toast message for connection sent -->
+  <div
+    *ngIf="isToastVisible"
+    class="toast-message bg-opacity-50 items-center top-5 bg-[#00967D] w-80 absolute text-white px-5 py-2 mr-4 rounded-lg shadow-md duration-300 z-50"
+  >
+    {{ toastMessage }}
+  </div>
+
+  <!-- badges icon -->
+  <div *ngIf="userProfileData"   class="badges-container text-center flex justify-center gap-2 mt-2">
+    <img
+      class="badges left-228 overflow-visible"
+      width="20"
+      height="20"
+      src="badge.png"
+      alt="badges"
+      (click)="goToBadgesPage()"
+    />
+    <!-- <h1 class="badges-text text-gray-400 text-xs" (click)="goToBadgesPage()">
+      {{ userProfileData?.badges.length || 0 }} badges
+    </h1> -->
+  </div>
+
+  <p class="bio-text text-gray-500 text-center text-xs mt-5"></p>
+
+  <!-- below bio wher eyou find the n umber of connections, posts and communitie sthe student has joined -->
+  <div class="below-bio-container m-1">
+    <ul
+      class="py-4 text-xs mb-4 m-3 mt-2 text-gray-700 flex items-center justify-evenly"
+    >
+      <li class="flex ml-5 mr-2 flex-col items-center">
+        <!-- <h2>{{ userProfileData?.connections?.length || 0 }}</h2> -->
+        <div>Connections</div>
+      </li>
+
+      <div class="line ml-2 mb-4"></div>
+      <li class="flex mr-7 flex-col items-center">
+        <!-- <h1>{{ userProfileData?.communities?.length || 0 }}</h1> -->
+        <div>Communities</div>
+      </li>
+      <div class="line mb-4"></div>
+
+      <li class="flex mr-5 flex-col items-center">
+        <h2>{{ userProfileData?.posts?.length || 0 }}</h2>
+        <div>Posts</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Posts Section -->
+
+<!-- <div class="posts flex flex-col gap-4 p-4">
+  <div class="post border border-gray-300 rounded-lg p-4 shadow-sm">
+    <div class="frame-39437 flex flex-col gap-2">
+      <div class="frame-39432 flex flex-col gap-2">
+        <div class="frame-39431 flex items-center justify-between"> -->
+<!-- <div class="frame-39430 flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded-full object-cover"
+              [src]="userProfileData?.profileImage || 'default-img-2.png'"
+              alt="User"
+            />
+            <div class="username-text">
+              <div class="font-medium text-sm text-black">
+                {{ userProfileData?.firstName }} {{ userProfileData?.lastName }}
+              </div>
+              <div class="text-xs text-gray-500">
+                &#64;{{ userProfileData?.username }}
+              </div>
+            </div>
+          </div> -->
+<!-- <div class="report-container">
+            <app-report-post></app-report-post>
+          </div> -->
+
+<!-- <div
+            class="report-container cursor-pointer"
+            (ngSubmit)="reportPost()"
+            (click)="openReportPopUp()"
+          >
+            <img class="w-4 h-4" src="report.svg" alt="Report" />
+          </div> -->
+<!-- </div>
+        <div class="text-sm text-gray-700">
+          {{ userProfileData?.latestPost }}
+        </div>
+
+        <h2
+          *ngIf="userProfileData?.posts === 0"
+          class="no-posts text-gray-500 ml-[150px] mt-[100px] align-center"
+        >
+          No posts yet
+        </h2>
+      </div>
+      <div
+        class="like-posts-container flex justify-between items-center text-gray-500 text-xs"
+      > -->
+<!-- <div *ngFor="let post of userProfileData?.posts">
+        <div class="posts-icons flex gap-6 items-center">
+          <div class="flex items-center gap-1">
+            <img class="like-icon w-4 h-4" src="Like.svg" alt="Like" />
+            <span>{{ userProfileData?.posts?.likes || 0 }}</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <img class="comment-icon w-4 h-4" src="comment.svg" alt="Comment" />
+            <span>{{ userProfileData?.posts?.comments?.length || 0 }}</span>
+          </div>
+        </div>
+        <span class="time-posted text-gray-300 text-xs">{{ userProfileData?.posts?.[0]?.timePosted || 'Just now' }}</span>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div *ngFor="let post of userProfileData?.posts">
+  <!-- Post Icons (Like and Comment) -->
+  <div class="posts-icons flex gap-6 items-center">
+    <div class="flex items-center gap-1">
+      <img class="like-icon w-4 h-4" src="Like.svg" alt="Like" />
+      <span>{{ post?.postLikes?.length || 0 }}</span> <!-- Accessing likes for each post -->
+    </div>
+    <div class="flex items-center gap-1">
+      <img class="comment-icon w-4 h-4" src="comment.svg" alt="Comment" />
+      <span>{{ post?.comments?.length || 0 }}</span> <!-- Accessing comments for each post -->
+    </div>
+  </div>
+
+  <!-- Time posted -->
+  <span class="time-posted text-gray-300 text-xs">
+    {{ post?.date || 'Just now' }}
+  </span>
+
+  <!-- Displaying Comments -->
+  <div *ngFor="let comment of post?.comments">
+    <div class="comment">
+      <!-- Displaying the description (comment content) -->
+      <p>{{ comment?.description }}</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div *ngFor="let post of userProfileData?.posts">
+  <div class="posts-icons flex gap-6 items-center">
+    <div class="flex items-center gap-1">
+      <img class="like-icon w-4 h-4" src="Like.svg" alt="Like" />
+      <span>{{ userProfileData?.posts?.likes || 0 }}</span>
+    </div>
+    <div class="flex items-center gap-1">
+      <img class="comment-icon w-4 h-4" src="comment.svg" alt="Comment" />
+      <span>{{ userProfileData?.posts?.comments?.length || 0 }}</span>
+    </div>
+  </div>
+  <span
+    class="time-posted text-gray-300 text-xs"
+    >{{ userProfileData?.posts?.[0]?.timePosted || 'Just now' }}</span
+  >
+</div> -->

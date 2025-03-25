@@ -1,0 +1,129 @@
+<div class="header">
+  <div>
+    <h3 class="edumingle mt-[10px]">
+      Edu<span class="edu-mingle-span">M</span>ingle
+    </h3>
+  </div>
+  <div><app-hamburger> </app-hamburger></div>
+</div>
+<br />
+<div class="search">
+  <input class="searchInput" routerLink="/search" placeholder="Search" />
+  <img class="searchIcon" src="icons/searchIcon.svg" />
+</div>
+
+<div class="postbox">
+  <div class="">
+    @if(this.authService.userData.imageUrl == null && this.authService.userData.id != null){
+    <img (click)="this.postService.setClickedUserId(this.authService.userData.id)"
+      class="w-10 h-10 rounded-full ml-3 mt-3" routerLink="/profile"
+      [src]="userProfileData?.imageUrl || 'default-img-2.png'" />
+    } @else {
+    <img class="w-10 h-10 rounded-full mt-2 ml-2" routerLink="/profile" [src]="this.authService.userData.imageUrl" />
+
+    }
+  </div>
+
+  <form [formGroup]="postForm">
+    <textarea class="educateInput" [(ngModel)]="postContent" formControlName="postContent"
+      placeholder="What's on your mind?"> </textarea>
+    <input hidden (change)="onFileChange($event)" #fileInput accept="image/*" type="file" id="file">
+    <label class="imageInput" for="file"><img class="iconcamera" src="icons/camera0.svg" /> </label>
+    <img *ngIf="previewUrl" [src]="previewUrl" alt="Image Preview" class="image-preview" />
+  </form>
+  <button (click)="submit()" class="educatebtn">Converse</button>
+</div>
+
+<div class="communitySection"></div>
+<div class="need-help-ask-your-community">
+  Need help? Ask your
+  <br />
+  Community!
+</div>
+<button routerLink="/community" class="ask-now">Ask Now</button>
+<img class="catpic" src="images/catpic.png" />
+
+<div class="eduMingle">
+  <div class="eduname">EduMingle</div>
+  <div class="post">
+    <span>
+      <span class="eduSpan">
+
+        Hey there, EduMingler! <br />
+
+        Start by introducing yourself and creating communities that match your interests. Let’s build a thriving
+        learning hub together!
+
+      </span>
+    </span>
+  </div>
+  <!-- @if(){} -->
+  <app-report-post class="more"></app-report-post>
+  <!-- <img routerLink="/comments" class="chat" src="icons/chat1.svg" /> -->
+  <img [src]="icon" (click)="OnClick()" class="love" />
+  <div class="_10">{{ likeCount }}</div>
+  <img class="image-21" src="images/image-210.png" />
+  <div class="eduTime">1m</div>
+  <!-- <div class="_3">0</div> -->
+  <img class="eduimage" src="edumingle.png" />
+</div>
+
+
+@for (item of this.postService.posts; track $index) {
+<div class="post-container w-full max-w-[85%] rounded-lg p-3 flex flex-col gap-2 border bg-white">
+  <div class="flex items-center gap-3">
+    @if(item.userInfo != null && item.userInfo.id != undefined){
+    @if(item.userInfo.imageUrl != undefined ){
+    <img (click)="this.postService.setClickedUserId(item.userInfo.id)" class="w-10 h-10 rounded-full"
+      routerLink="/profile" [src]="item.userInfo.imageUrl" />
+    }
+    @else {
+    <img (click)="this.postService.setClickedUserId(item.userInfo.id)" class="w-[40px] h-[36px] rounded-full"
+      routerLink="/profile" src="default-img-2.png" />
+    }
+    }
+    <div class="name font-semibold text-gray-900" routerLink="/profile">{{ item.name }}</div>
+  </div>
+
+  <div class="post-description break-words text-gray-700">
+    {{ item.description }}
+  </div>
+
+
+  @if(item.imageUrl != ""){
+  <img *ngIf="item.imageUrl" class="w-full h-auto rounded-lg" [src]="item.imageUrl" />
+  }
+
+  <div class="flex items-center justify-between">
+    <div class="flex items-center">
+      <img (click)="this.comments.setClickedCommentPost(item)" routerLink="/comments" class="chat w-6 h-6"
+        src="icons/chat1.svg" />
+      <div class="commentCount text-sm text-gray-500">0</div>
+    </div>
+    <div class="flex items-center">
+      <img [src]="icon" (click)="OnClick()" class="love w-6 h-6 cursor-pointer" />
+      <div class="likeCount text-sm text-gray-500">{{ likeCount }}</div>
+    </div>
+    @if(item.userInfo && item.userInfo.id){
+    @if(item.userInfo.id == this.postService.loggedUserId){
+    <app-delete-modal (click)="this.postService.setPostIdToDelete(item?.id)"> class="more"></app-delete-modal>
+    }
+    @else if (item.userInfo.id != this.authService.userData.id){
+    <app-report-post (click)="this.postService.getReoprtedPostId(item?.id)" class="more"></app-report-post>
+    }
+
+    }
+
+  </div>
+
+  <div class="time text-xs text-gray-400 mt-1">
+    {{getTimDiff(item.date)}}
+  </div>
+</div>
+}
+
+
+<!-- <div class="mt-[200px] text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum labore aliquam
+  aliquid quasi tempora magnam optio ipsam deleniti non beatae consequuntur, animi quo sed fugiat enim harum
+  necessitatibus vero? </div> -->
+<app-navbar></app-navbar>

@@ -1,0 +1,15 @@
+<div
+  class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex items-center justify-between px-4 py-2"
+>
+  <img src="icons/arrow-left1.svg" (click)="goBack()" style="cursor: pointer" />
+
+  <h1
+    class="text-lg font-semibold absolute left-1/2 transform -translate-x-1/2"
+  >
+    {{ pageTitle }}
+  </h1>
+
+  <div class="mb-10">
+    <app-hamburger></app-hamburger>
+  </div>
+</div>

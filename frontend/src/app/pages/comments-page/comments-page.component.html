@@ -1,0 +1,120 @@
+<div class="bg-[#ffffff] h-[852px] relative overflow-hidden">
+  <div class="text-[#000000] text-left font-['Poppins-Bold',_sans-serif] text-xl absolute left-[150px] top-[59px]">
+    Comments
+  </div>
+  <div class="w-[50px] h-[50px] absolute left-[15px] top-11">
+    <img class="w-[75%] h-[75%] absolute right-[12.5%] left-[12.5%] bottom-[12.5%] top-[12.5%] overflow-visible"
+      src="icons/backIcon.svg" routerLink="/home" />
+  </div>
+  <div
+    class="eduPost rounded-[10px] border-solid border-[transparent] border w-[479px] h-[296px] absolute left-[15px] top-[94px] overflow-hidden">
+    <div class="flex items-center gap-3">
+      @if(item.userInfo != null && item.userInfo.id != undefined){
+      @if(item.userInfo.imageUrl != undefined ){
+      <img (click)="this.postService.setClickedUserId(item.userInfo.id)" class="w-10 h-10 rounded-full"
+        routerLink="/profile" [src]="item.userInfo.imageUrl" />
+      }
+      @else {
+      <img (click)="this.postService.setClickedUserId(item.userInfo.id)" class="w-[40px] h-[36px] rounded-full"
+        routerLink="/profile" src="default-img-2.png" />
+      }
+      }
+      <div class="name font-semibold text-gray-900" routerLink="/profile">{{ item.name }}</div>
+    </div>
+    <!-- <div
+      class="eduMingle text-[#000000] text-left font-['Poppins-Regular',_sans-serif] text-sm font-normal absolute left-[29px] top-[58px] w-[306px]"> -->
+    <div class="post-description break-words text-gray-700">
+
+      {{item.description}}
+
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <img (click)="this.commentsService.setClickedCommentPost(item)" routerLink="/comments" class="chat w-6 h-6"
+          src="icons/chat1.svg" />
+        <div class="commentCount text-sm text-gray-500">0</div>
+      </div>
+      <div class="flex items-center">
+        <img [src]="icon" (click)="OnClick()" class="love w-6 h-6 cursor-pointer" />
+        <div class="likeCount text-sm text-gray-500">{{ likeCount }}</div>
+      </div>
+      @if(item.userInfo && item.userInfo.id){
+      @if(item.userInfo.id == this.postService.loggedUserId){
+      <app-delete-modal (click)="this.postService.setPostIdToDelete(item.id)"> class="more"></app-delete-modal>
+      }
+      @else if (item.userInfo.id != this.authService.userData.id){
+      <app-report-post (click)="this.postService.getReoprtedPostId(item.id)" class="more"></app-report-post>
+      }
+
+      }
+
+    </div>
+    <!-- <img class="w-10 h-10 absolute left-[29.06px] top-3 overflow-visible"
+      style="transform: translate(-0.03px, 0.03px); object-fit: cover" src="edumingle.png" /> -->
+    <div
+      class="text-[#cecece] text-left font-['Poppins-Regular',_sans-serif] text-[10px] font-normal absolute left-[300px] top-[167px]">
+      0 m
+    </div>
+    <div class="flex flex-row gap-[30px] items-center justify-start absolute left-[27px] top-[168px]">
+      <div class="flex flex-row gap-[3px] items-center justify-start shrink-0 relative">
+        <div class=" w-5 h-5"> </div>
+        <img class="active-icon material-icons shrink-0 w-5 h-5 absolute left-0 top-0 overflow-visible" [src]="icon"
+          (click)="OnClick()" />
+        <div class="text-[#000000] text-left font-['Poppins-Regular',_sans-serif] text-xs font-normal relative">
+          {{ likeCount }}
+        </div>
+      </div>
+      <div class="flex flex-row gap-0.5 items-center justify-start shrink-0 relative">
+        <div class=" shrink-0 w-5 h-5 relative">
+          <img class="commentIcon w-[89.58%] h-[72.92%]  overflow-visible" src="icons/commentsIcon.svg" />
+        </div>
+        <div
+          class="postIcons text-[#000000] text-left font-['Poppins-Regular',_sans-serif] text-xs font-normal relative">
+          {{ postedComments }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <form [formGroup]="commentForm">
+    <div class="commentInput [#ffffff] h-[117px] relative">
+      <input formControlName="commentInput" #commentInput
+        class="bg-[#ffffff] rounded-[15px] border-solid border-[#e9ebf8] border w-[264px] h-[34px] text-[#000000] p-3 text-left font-['Poppins-Regular',_sans-serif] text-sm font-normal absolute w-[269px] h-[29px]"
+        placeholder="Write comment here..." />
+      <button class="commentBtn text-[#000000] text-left font-['Poppins-SemiBold',_sans-serif] text-xs font-semibold"
+        style="translate: 0 -50%; cursor: pointer;" (click)="PostComment(commentInput.value); commentInput.value='';">
+        Comment
+      </button>
+    </div>
+
+    <div class="commentsNum">
+      <span class="text-[#656566] text-xs font-['Poppins-Regular',_sans-serif] font-normal">
+        {{ postedComments }} Comments
+      </span>
+    </div>
+
+    @for (item of comment; track $index) {
+
+    <ul class="commentbox">
+      <!-- <li *ngFor="let comment of comments" class="mb-1"> -->
+      <!-- <img
+    class="ppw-10 h-10 absolute left-[-10px] top-[5px] overflow-visible"
+    style="transform: translate(-7.03px, -6.97px); object-fit: cover"
+    src="images/sino.svg"
+  /> -->
+      <!-- <div>t6yuijhyt6gyh</div> -->
+      <div class="name flex"> {{item.name }}<br />
+        <!-- <p class="time">7d</p> -->
+        <app-report-post class="more"></app-report-post>
+      </div>
+      <p class="comment pl-4 pr-4"> {{ item.description }} </p>
+      <div class="icons">
+        <img class="icon" src="icons/heart.svg">
+        <div class="likeCount" (click)="OnClick()">{{ likeCount }}</div>
+      </div>
+      <hr />
+    </ul>
+    }

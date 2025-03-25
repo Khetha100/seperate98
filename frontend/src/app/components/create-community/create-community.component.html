@@ -1,0 +1,177 @@
+<div class="main-container">
+  <div>
+    <app-inside-nav></app-inside-nav>
+  </div>
+  <div class="frame-39414">
+    <div class="create-community">
+      <div class="form-container">
+        <div class="header mt-2 text-3xl font-bold">Create Community</div>
+        <!-- Form -->
+        <form [formGroup]="communityForm">
+          <div class="input-container mt-2">
+            <!-- Community Name input -->
+            <input
+              type="text"
+              placeholder="Community Name"
+              class="frame-39416"
+              formControlName="communityName"
+            />
+            <div
+              *ngIf="
+                communityForm.controls['communityName']?.touched &&
+                communityForm.controls['communityName']?.invalid
+              "
+              class="comNameClass"
+            >
+              Community name is required.
+            </div>
+
+            <!-- Community Description input -->
+            <input
+              type="text"
+              placeholder="Community Description"
+              class="frame-39415"
+              formControlName="communityDescription"
+            />
+            <div
+              *ngIf="
+                communityForm.controls['communityDescription']?.touched &&
+                communityForm.controls['communityDescription']?.invalid
+              "
+              class="descrClass"
+            >
+              Community Description is required.
+            </div>
+
+            <!-- Public or Private input -->
+            <!-- <input
+              type="text"
+              placeholder="Public or Private"
+              class="frame-39418"
+              formControlName="pubOrPriv"
+            />
+            <div
+              *ngIf="
+                communityForm.controls['pubOrPriv']?.touched &&
+                communityForm.controls['pubOrPriv']?.invalid
+              "
+              class="pubOePrivClass"
+            >
+              Public or Private is required.
+            </div> -->
+            <div>
+              <!-- <label for="grade" class="block text-lg font-medium text-sm text-gray-700"
+                >Grade</label
+              > -->
+              <select
+                id="grade"
+                placeholder="Public or Private"
+                formControlName="pubOrPriv"
+                class="pubOrPriv"
+              >
+                <option class="place" value="">Public or Private</option>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+              <!-- <div
+                *ngIf="
+                  profileForm.get('grade')?.invalid && profileForm.get('grade')?.touched
+                "
+                class="mt-1 text-sm text-red-500"
+              >
+                <small>Grade is required.</small>
+              </div> -->
+            </div>
+
+            <!-- <div class="addPic"> -->
+            <input
+              hidden
+              class="imageInput"
+              (change)="onFileChange($event)"
+              #fileInput
+              accept="image/*"
+              type="file"
+              id="file"
+            />
+            <label class="imageInput" for="file">Add community pic</label>
+            <!-- </div> -->
+          </div>
+        </form>
+
+        <div class="statementsAndCheckBoxes mt-2">
+          <!-- Cloudinary-->
+
+          <!-- In your view, render the image in an Angular component.-->
+          <!-- <advanced-image [cldImg]="img"></advanced-image> -->
+
+          <!-- Cloudinary-->
+
+          <!-- Community behavior statements (text) -->
+          <div class="statements">
+            <div class="statement1">
+              <input
+                type="checkbox"
+                (change)="onCheckBoxChange($event)"
+                class="rectangle-18034"
+              />
+              <div
+                class="i-will-treat-all-members-with-kindness-and-respect-avoiding-harassment-hate-speech-or-offensive-behavior"
+              >
+                I will treat all members with kindness and respect, avoiding
+                harassment, hate speech, or offensive behavior.
+              </div>
+            </div>
+            <div class="statement2">
+              <input
+                type="checkbox"
+                (change)="onCheckBoxChange($event)"
+                class="rectangle-18035"
+              />
+              <div
+                class="i-will-ensure-discussions-and-posts-are-relevant-to-the-community-s-purpose-to-maintain-a-focused-learning-environment"
+              >
+                I will ensure discussions and posts are relevant to the
+                community’s purpose to maintain a focused learning environment.
+              </div>
+            </div>
+
+            <div class="statement3">
+              <input
+                type="checkbox"
+                (change)="onCheckBoxChange($event)"
+                class="rectangle-18036"
+              />
+              <div
+                class="i-will-share-accurate-and-trustworthy-resources-or-information-that-benefits-the-community"
+              >
+                I will share accurate and trustworthy resources or information
+                that benefits the community.
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkboxes -->
+          <div class="checkboxes"></div>
+        </div>
+
+        <!-- Launch Community button -->
+        <div class="myDiv">
+          <div class="frame-39419">
+            <a (click)="openDialog()" class="launch-community"
+              >Launch Community</a
+            >
+          </div>
+        </div>
+
+        <!-- Form Completion message -->
+        <div *ngIf="formComplete" class="isCompl">
+          Please complete filling the form
+        </div>
+
+        <!-- <div *ngIf="formComplete==false" class="isCompl">
+      Please complete filling the form
+    </div> -->
+      </div>
+    </div>
+  </div>
+</div>

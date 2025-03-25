@@ -1,0 +1,45 @@
+<div class="flex">
+  <app-sidebar></app-sidebar>
+  <div class="flex-1 ml-[316px]">
+    <div
+      class="donation-management bg-white relative overflow-hidden h-[832px]"
+    >
+      <div
+        class="absolute left-[48px] top-12 text-center text-black font-extrabold text-5xl"
+      >
+        Donation Management
+      </div>
+
+      <div
+        class="dashboard bg-white m-4 mt-40 shadow-lg border border-gray-100 rounded-lg"
+      >
+        <!-- Table Columns (Headers) -->
+        <div
+          class="flex justify-between px-5 py-2 bg-gray-100 border-b-[1px] border-gray-300"
+        >
+          <div class="w-1/4 text-center text-[20px] font-light">Full Name</div>
+          <div class="w-1/4 text-center text-[20px] font-light">Email</div>
+          <div class="w-1/4 text-center text-[20px] font-light">Amount</div>
+        </div>
+
+        <!-- Donation Rows -->
+        <div class="space-y-5 mt-5">
+          <div
+            *ngFor="let donation of donations"
+            class="flex justify-between px-5 py-2 border-b-[1px] border-gray-200"
+          >
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ donation.fullName }}
+            </div>
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ donation.email }}
+            </div>
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ formatAmount(donation.amount) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

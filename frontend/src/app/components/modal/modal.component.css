@@ -1,0 +1,48 @@
+
+
+.modal-body{
+text-align: center;
+padding: 10px 10px 10px 10px;
+height: 100px;
+width: 270px;
+/* width: 135px;
+height: 35px; */
+display: block;
+}
+
+/* .modal-footer{
+  background: #00967d;
+    border-radius: 10px;
+    width: 184px;
+    height: 40px;
+    text-align: center;
+   
+    margin-left: 45px;
+
+} */
+
+.myBtn{
+  /* margin-top: 5vh; */
+  color: white;
+  font-size: 15px;
+  margin: 0px 10px 50px 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #00967d;
+  cursor: pointer; 
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.success-paragraph{
+  font-size: 16px;
+  font-weight: 900;
+  color: #00967d;
+  
+}
+
+.badge-image{
+  width: 100px;
+  height: 100px;
+}

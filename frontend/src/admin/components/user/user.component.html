@@ -1,0 +1,89 @@
+<div class="flex">
+  <app-sidebar></app-sidebar>
+  <div class="flex-1 ml-[316px]">
+    <div class="user-management bg-white relative overflow-hidden h-[832px]">
+      <div class="absolute left-[48px] top-12 text-center text-black font-extrabold text-5xl">
+        User Management
+      </div>
+
+      <div class="dashboard bg-white m-4 mt-40 shadow-lg border border-gray-100 rounded-lg">
+        <div class="flex justify-between px-5 py-2 border-b-[1px] bg-gray-100 border-gray-300">
+          <div class="w-1/4 text-center text-[20px] font-light">User</div>
+          <div class="w-1/4 text-center text-[20px] font-light">Email/Number</div>
+          <div class="w-1/4 text-center text-[20px] font-light">Role</div>
+          <div class="w-1/4 text-center text-[20px] font-light">Actions</div>
+        </div>
+
+        <div class="space-y-5 mt-5">
+          <div
+            *ngFor="let user of users"
+            class="flex justify-between px-5 py-2 border-b-[1px] border-gray-200"
+            [class.bg-red-100]="user?.isTemporarilyDeleted"
+          >
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ user?.firstName || 'N/A' }}
+            </div>
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ user?.phone || 'N/A' }}
+            </div>
+            <div class="w-1/4 text-center text-[20px] font-normal">
+              {{ user?.role || 'N/A' }}
+            </div>
+            <div class="w-1/4 text-center">
+              <button
+                *ngIf="!user?.isTemporarilyDeleted && user?.id !== undefined"
+                (click)="confirmTemporaryDelete(user.id!)"
+                class="bg-[#ED5252] text-black rounded-[10px] w-[50px] h-[25px] text-[11px]"
+              >
+                Delete
+              </button>
+              <button
+                *ngIf="user?.isTemporarilyDeleted && user?.id !== undefined"
+                (click)="confirmPermanentDelete(user.id!)"
+                class="bg-[#FF0000] text-white rounded-[10px] w-[80px] h-[25px] text-[11px]"
+              >
+                Permanent
+              </button>
+              @if(user.id){
+                <button
+                routerLink="/profile"
+                  *ngIf="user?.id !== undefined"
+                  (click)="this.authService.setClickedUserId(user.id)"
+                  class="bg-[#D9D9D9] text-black rounded-[10px] w-[50px] h-[25px] text-[11px] ml-2 mt-2"
+                >
+                  Review
+                </button>
+              }
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-modal
+      [show]="showModal"
+      [title]="modalTitle"
+      [message]="modalMessage"
+      [confirmText]="modalConfirmText"
+      cancelText="Cancel"
+      (confirm)="deleteUser()"
+      (cancel)="closeModal()"
+    ></app-modal>
+  </div>
+</div>
+
+<!-- <table>
+  <tr *ngFor="let user of users">
+    <td>{{ user?.firstName || 'N/A' }} {{ user?.lastName || '' }}</td>
+    <td>{{ user?.phone || 'N/A' }}</td>
+    <td *ngIf="user?.isTemporarilyDeleted" class="text-danger">Temporarily Deleted</td>
+    <td *ngIf="!user?.isTemporarilyDeleted">
+      <button *ngIf="user?.id !== undefined" (click)="temporarilyDeleteUser(user.id!)">
+        Temporarily Delete
+      </button>
+
+    </td>
+  </tr>
+</table> -->

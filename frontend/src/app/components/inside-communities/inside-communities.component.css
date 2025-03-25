@@ -1,0 +1,295 @@
+.studentstoconnect,
+.studentstoconnect * {
+  box-sizing: border-box;
+}
+.studentstoconnect {
+  background: #ffffff;
+  height: 852px;
+  position: relative;
+  overflow: hidden;
+}
+
+.searchInput {
+  background: #f1f1f1;
+  border-radius: 15px;
+  width: 95%;
+  height: 55px;
+  position: absolute;
+  left: 10px;
+  top: 75px;
+  overflow: hidden;
+  border: none;
+}
+
+.search {
+  left: 330px;
+  top: 85px;
+  overflow: visible;
+  
+
+}
+
+.searchInput::placeholder {
+  color: gray;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  position: absolute;
+  left: 25px;
+  top: 17px;
+  width: 56px;
+  height: 24px;
+}
+
+.frame-39402 {
+  background: #146356;
+  border-radius: 15px;
+  width: 95%;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 145px;
+  overflow: hidden;
+}
+
+.rectangle-18007 {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.rectangle-18006 {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+.discussions {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  position: absolute;
+  left: 44px;
+  top: 7px;
+}
+
+.students {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  right: 52px;
+  top: 7px;
+}
+
+.frame-39451 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 361px;
+  height: 458px;
+  position: absolute;
+  left: 16px;
+  top: 245px;
+  overflow-y: auto;
+}
+.frame-39468 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-39403 {
+  /* background: #f1f1f1; */
+  border-radius: 10px;
+
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 60px;
+  width: 450px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* hr {
+  margin: 10px;
+} */
+.visitbtn { 
+  background: #00967d;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: transparent;
+  /* border-width: 1px; */
+  /* align-self: flex-end; */
+  /* flex-shrink: 0; */
+  height: 30px;
+  width: 80px;
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  left: 270px;
+  top: 15px;
+  color: #f1f1f1 ;
+}
+.rectangle-18010 {
+  background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  object-fit: cover;
+}
+._25-connections {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 91px;
+  top: 39px;
+}
+.coolest-kid-on-the-block-top-5-grade-12-mathematics-football-lover {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 91px;
+  top: 59px;
+  width: 225px;
+}
+.arno-greeff {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  left: 62px;
+  top: 18px;
+  width: 900px;
+  font-weight: 400;
+  
+  /* height: 20px; */
+}
+.rectangle-18056 {
+  background: #00967d;
+  border-radius: 10px;
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  left: 277px;
+  top: 16px;
+}
+.connectBtn {
+  background: #00967d;
+  border-radius: 10px;
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  left: 277px;
+  top: 16px;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+.frame-39406 {
+  background: #f1f1f1;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+._87-connections {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 91px;
+  top: 39px;
+}
+.sport-fanatic-do-not-tag-me-on-anything-grade-12-headboy {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  left: 91px;
+  top: 59px;
+  width: 225px;
+}
+.wade-daniels {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Light", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  position: absolute;
+  left: 91px;
+  top: 12px;
+}
+.students-to-connect-with {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: 18px;
+  top: 200px;
+}
+
+.addOrRemove{
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  right: 24px;
+  top: 200px;
+}
+
+.menu {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 322px;
+  top: 60px;
+  overflow: visible;
+}
+
+
