@@ -1,18 +1,18 @@
 # Fetch Node.js image
-FROM node:20.11.0-alpine
+FROM node:20.11.0-alpine AS build
 
 # Set the working directory inside the container
-WORKDIR /app/frontend
+WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json /app/frontend/
+# Copy package.json and package-lock.json **from frontend directory**
+COPY frontend/package*.json ./
 
 # Clean cache and install dependencies
 RUN npm cache clean --force
 RUN npm install --force --save
 
-# Copy source code
-COPY . .
+# Copy frontend source code
+COPY frontend/ .
 
 # **Set environment variable for backend API URL**
 ENV BACKEND_URL="https://seperate98-back5.onrender.com"
@@ -27,7 +27,7 @@ RUN npm run build -- --configuration=production
 FROM nginx:alpine
 
 # Copy built frontend app to Nginx folder
-COPY --from=0 /app/dist/* /usr/share/nginx/html
+COPY --from=build /app/dist/* /usr/share/nginx/html
 
 # Expose port 80 for serving frontend
 EXPOSE 80
