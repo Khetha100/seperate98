@@ -20,11 +20,14 @@ WORKDIR /app
 # Copy the built JAR from the previous stage
 COPY --from=build /app/backend/target/backend-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port
+# Expose the correct port
 EXPOSE 8080
 
-# Run the application
-CMD ["java", "-jar", "app.jar"]
+# Set up environment variable for Render's PORT
+ENV PORT=8080
+
+# Run the application and bind it to PORT
+CMD ["sh", "-c", "java -jar app.jar --server.port=${PORT}"]
 
 
 
