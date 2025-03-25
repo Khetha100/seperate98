@@ -1,24 +1,36 @@
-# Fetch node image
+# Fetch Node.js image
 FROM node:20.11.0-alpine
 
-# Set the working directory (Inside the container)
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json to the container
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Clean cache and install dependencies
 RUN npm cache clean --force
-# Build angular application
-# RUN npm install -g npm@latest
-RUN npm install  --force --save
+RUN npm install --force --save
 
-# Copy the source code to the container
+# Copy source code
 COPY . .
 
-RUN npm run build
+# **Set environment variable for backend API URL**
+ENV BACKEND_URL="https://seperate98-back5.onrender.com"
 
-# Expose the port 4200
-EXPOSE 4200
+# Replace backend URL in Angular build
+RUN sed -i "s|http://localhost:8080|${BACKEND_URL}|g" src/environments/environment.prod.ts
 
-# Start the application
-CMD ["npm", "start"]
+# Build Angular app
+RUN npm run build -- --configuration=production
+
+# Use Nginx to serve Angular app
+FROM nginx:alpine
+
+# Copy built frontend app to Nginx folder
+COPY --from=0 /app/dist/* /usr/share/nginx/html
+
+# Expose port 80 for serving frontend
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
